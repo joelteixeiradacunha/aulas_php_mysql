@@ -101,7 +101,8 @@ echo "<br>-------------------------------------------<br>";
 // Declare sua altura (float)
 
 // Declare se você é estudante (boolean)
-
+$estudante = true;
+if ($estudante)
 // Crie um array com 3 cores favoritas
 
 // Exiba todas as informações usando echo
