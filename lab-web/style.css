@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.bloco-1{
+    background-color: #f00;
+    width: 100px;
+    height: 100px;
+}
+
+.bloco-2{
+    background-color: #0f0;
+    width: 100px;
+    height: 100px;
+}
+
+.bloco-3{
+    background-color: #00f;
+    width: 100px;
+    height: 100px;
+}
+
+.img-sunset{
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 50%;
+    height: auto;
+}
+
+.card-img{
+    width: 18rem;
+}
