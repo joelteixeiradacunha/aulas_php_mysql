@@ -128,3 +128,53 @@ switch ($diaSemana) {
     default:
         echo "Dia inválido";
 }
+
+// WHILE..DO
+// FOR..FOREACH
+//while (condição) {
+//    // código a ser executado
+//}
+
+$contador = 0;
+
+while ($contador <= 5) {
+    echo "Contador: $contador<br>";
+    $contador++;
+}
+echo "<br>----------------------------------------<br>";
+// DO...WHILE
+// do {
+//  // código a ser executado
+//} while (condição);
+
+$contador = 1;
+do {
+    echo "Número: $contador<br>";
+    $contador++;
+} while ($contador <= 10);
+echo "<br>----------------------------------------<br>";
+// FOR
+// for (inicialização; condição; incremento) {
+//  // código a ser executado
+//}
+
+for ($i = 0; $i <= 5; $i++) {
+    echo "Valor: $i<br>";
+}
+// FOREACH
+// foreach ($array as $valor) {
+// código que usa $valor
+
+echo "<br>----------------------------------------<br>";
+$cores = ["vermelho", "azul", "verde"];
+
+foreach ($cores as $cor) {
+    echo "Cor: $cor<br>";
+}
+echo "<br>----------------------------------------<br>";
+$aluno = ["nome" => "Lucas", "idade" => 16];
+
+foreach ($aluno as $chave => $valor) {
+    echo "$chave: $valor<br>";
+    }
+?>
