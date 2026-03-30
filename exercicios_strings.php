@@ -2,7 +2,7 @@
 
 ### 🧩 Exercícios de PHP – Strings
 
-//  Crie uma variável que receba uma frase com ao menos 30 palavras.
+//  Crie uma variável que receba uma frase com ao menos 30 palavras, contando como foi seu final de semana.
 //  Resolva as questões abaixo usando essa frase como base
 //  Apresente os resultados na tela de forma organizada, contendo o número da pergunta, a pergunta e a resposta.
 //
