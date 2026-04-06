@@ -1,18 +1,26 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "aulaphp");
 
-$name = $_REQUEST["name"];
-$regAluno = $_REQUEST["regAluno"];
-$email = $_REQUEST["email"];
-$phone = $_REQUEST["cellPhone"];
 
-$insert = "INSERT INTO cadastroalunos(regAluno, nome, email, celular) 
-VALUES ($name, $regAluno, $email, $phone)";
+@$nome = $_REQUEST["nome"];
+@$password = $_REQUEST["password"];
+@$email = $_REQUEST["email"];
+@$type = $_REQUEST["kind"];
+@$telefone = $_REQUEST["cellPhone"];
 
-if (mysqli_query($connect, $insert) === TRUE) {
+$conn = mysqli_connect("localhost", "root", "", "teste");
+
+if ($conn ->connect_error){
+    die("Falha na conexão: " . $conn->connect_error);
+}else{
+    echo "Tudo ok";
+}
+
+$sql = "INSERT INTO cadastrousuario (nome, email, telefone, tipo, senha) VALUES ($nome, $email, $telefone, $type, $password)";
+
+if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $insert . "<br>" . $connect->error;
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 ?>
@@ -23,7 +31,7 @@ if (mysqli_query($connect, $insert) === TRUE) {
 </head>
 <body>
 
-<h3>Parabéns <?php echo $name ?>, seu cadastro foi realizado com sucesso.</h3>
+<h3>Parabéns <?php echo $nome ?>, seu cadastro foi realizado com sucesso.</h3>
 
 </body>
 </html>

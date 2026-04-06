@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "", "aulaphp");
+
 
 
 ?>
@@ -22,8 +22,8 @@ $connect = mysqli_connect("localhost", "root", "", "aulaphp");
         </div>
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Registro Aluno</label>
-        <input type="number" class="form-control" id="validationCustom02" name="regAluno" required>
+        <label for="validationCustom02" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="validationCustom02" name="password" required>
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -41,6 +41,13 @@ $connect = mysqli_connect("localhost", "root", "", "aulaphp");
     <div class="col-md-6">
         <label for="validationCustom03" class="form-label">Celular</label>
         <input type="tel" class="form-control" id="validationCustom03" name="cellPhone" required>
+        <div class="invalid-feedback">
+            Please provide a valid city.
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Celular</label>
+        <input type="text" class="form-control" id="validationCustom03" name="kind" required>
         <div class="invalid-feedback">
             Please provide a valid city.
         </div>
