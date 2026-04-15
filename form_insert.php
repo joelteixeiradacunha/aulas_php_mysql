@@ -11,12 +11,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <title>Form Insert</title>
+
+
 </head>
 <body>
-<form action="form_exit.php" method="post" class="row g-3 needs-validation" novalidate>
+<form action="form_exit_ufrs.php" method="post" class="row g-3 needs-validation" novalidate>
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" name="name" required>
+        <input type="text" class="form-control" id="validationCustom01" value="Mark" name="fullName" required>
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -46,7 +48,7 @@
         </div>
     </div>
     <div class="col-md-6">
-        <label for="validationCustom03" class="form-label">Celular</label>
+        <label for="validationCustom03" class="form-label">Tipo</label>
         <input type="text" class="form-control" id="validationCustom03" name="kind" required>
         <div class="invalid-feedback">
             Please provide a valid city.
