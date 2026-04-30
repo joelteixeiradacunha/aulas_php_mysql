@@ -1,0 +1,27 @@
+USE LOCADORA;
+
+-- PESQUISAR DADOS
+-- SELECT nome_dos campos FROM nome_da_tabela
+-- WHERE nome_d-Campo = valor_a_pesquisar (=, <>, <, >, <=, >=pagamentos)
+-- ORDER BY nome_do_campo ASC/DESC
+-- LIMIT numero_de_registros
+-- LIKE '%valor%', '%valor' ou 'valor%'
+
+SELECT * FROM VEICULOS;
+
+SELECT nome AS NOME_CLIENTE, cpf AS CPF FROM CLIENTES;
+
+SELECT * FROM PAGAMENTOS WHERE dataPagamento <= '2025-06-01';
+
+SELECT * FROM VEICULOS WHERE marca = 'TOYOTA' AND modelo = 'HILUX';
+
+SELECT * FROM FUNCIONARIOS ORDER BY NOME ASC;
+
+SELECT * FROM FUNCIONARIOS ORDER BY NOME DESC;
+
+SELECT * FROM FUNCIONARIOS ORDER BY NOME ASC LIMIT 5;
+
+SELECT * FROM FUNCIONARIOS WHERE NOME LIKE '%SEVERINO DAVI SEVERINO%' ORDER BY NOME DESC;
+
+-- ALTERAR LABEL DO CAMPO
+-- SELECT nome_do_campo AS novo_nome
