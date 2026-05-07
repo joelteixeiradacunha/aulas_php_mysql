@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova de Informática - IA</title>
+    <style>
+        /* CSS GERAL E RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #3498db;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center; /* Centraliza o menu */
+            flex-grow: 1; /* Ocupa o espaço central */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* CARROSSEL (CSS PURO) */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .carousel-slides {
+            display: flex;
+            width: 300%; /* 3 imagens */
+            animation: slideAnimation 15s infinite;
+        }
+
+        .slide {
+            width: 33.333%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px; /* Altura fixa para o carrossel */
+            object-fit: cover; /* Mantém proporção cortando */
+        }
+
+        /* Animação do carrossel */
+        @keyframes slideAnimation {
+            0% { transform: translateX(0%); }
+            30% { transform: translateX(0%); }
+            33% { transform: translateX(-33.333%); }
+            63% { transform: translateX(-33.333%); }
+            66% { transform: translateX(-66.666%); }
+            96% { transform: translateX(-66.666%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* MAIN CONTENT */
+        main {
+            padding: 20px 0 60px;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        /* GRID DE CARDS RESPONSIVO */
+        .cards-grid {
+            display: grid;
+            gap: 20px;
+            /* Mobile padrão: 1 por linha */
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #666;
+            color: #777;
+        }
+
+        /* RESPONSIVIDADE (MEDIA QUERIES) */
+
+        /* Tablets e telas médias */
+        @media (min-width: 600px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 por linha */
+            }
+        }
+
+        /* Telas grandes (Desktop) */
+        @media (min-width: 992px) {
+            .logo {
+                flex: 0 0 auto; /* Logo não estica */
+            }
+
+            nav {
+                flex: 1; /* Menu ocupa o centro */
+                display: flex;
+                justify-content: center;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 por linha */
+            }
+        }
+
+        /* Ajustes para telas muito pequenas (mobile nav) */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                font-size: 14px;
+            }
+
+            .carousel-slides .slide img {
+                height: 250px; /* Reduz altura no mobile */
+            }
+
+            .main-title {
+                font-size: 24px;
+            }
+        }
+        /* FOOTER */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Layout para Desktop no Footer */
+        @media (min-width: 992px) {
+            footer .container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .footer-nav {
+                order: 2; /* Centraliza o menu no desktop */
+            }
+            .footer-logo {
+                order: 1;
+            }
+            .footer-socials {
+                order: 3;
+            }
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            color: #3498db;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .footer-nav a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-socials a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a href="#" class="logo">LOGOTIPO<span>FICTÍCIO</span></a>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#patrocinadores">Patrocinadores</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <div class="carousel-container">
+        <div class="carousel-slides">
+            <div class="slide">
+                <img src="imagens/familia1.jpg" alt="Família sorrindo no parque">
+            </div>
+            <div class="slide">
+                <img src="imagens/familia2.jpg" alt="Família feliz na sala">
+            </div>
+            <div class="slide">
+                <img src="imagens/familia3.jpg" alt="Família abraçada na praia">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h1 class="main-title">Prova de Informática com uso de IA</h1>
+
+        <div class="cards-grid">
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Curabitur pretium tincidunt lacus. Nulla facilisi. Sed sit amet augue. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Sed convallis magna eu sem. Donec ac purus. Mauris pulvinar, ex eget scelerisque sagittis, felis diam varius erat.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Quisque id odio. Aenean viverra rhoncus pede. Suspendisse potenti. In hac habitasse platea dictumst.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ia-card.jpg" alt="Ilustração de IA" class="card-image">
+                <div class="card-content">
+                    <p>Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros.</p>
+                </div>
+            </div>
+
+        </div> </div> </main>
+<footer>
+    <div class="container">
+        <a href="#" class="footer-logo">LOGOTIPO<span>FICTÍCIO</span></a>
+
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#patrocinadores">Patrocinadores</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-socials">
+            <a href="#">FB</a>
+            <a href="#">IG</a>
+            <a href="#">TW</a>
+            <a href="#">LI</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
