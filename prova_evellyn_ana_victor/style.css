@@ -1,0 +1,173 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header e Footer Compartilhados */
+.site-header, .site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Redes Sociais no Footer */
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+/* Navegação (Nav) */
+.site-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #333;
+    padding: 15px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.site-nav h2 {
+    font-size: 18px;
+    font-weight: normal;
+    transition: color 0.3s;
+}
+
+.site-nav h2:hover {
+    color: #00bcd4;
+}
+
+/* Corpo Principal */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Carrossel Estático */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px; /* Bom espaço abaixo do carrossel */
+}
+
+.carousel-static {
+    position: relative;
+    width: 80%; /* Garante os espaços na esquerda (left) e direita (right) */
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-static img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Setas fictícias do carrossel parado */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.carousel-control.prev { left: 10px; }
+.carousel-control.next { right: 10px; }
+
+/* Título Principal H1 */
+.main-title {
+    text-align: center;
+    margin-bottom: 60px; /* Boa distância antes de começar os cards */
+    font-size: 28px;
+    color: #222;
+}
+
+/* Grid de Cards (Organizado em Duplas Centralizadas) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 300px); /* Força exatamente 2 colunas de 300px */
+    justify-content: center; /* Centraliza as duplas na tela */
+    gap: 40px; /* Espaçamento horizontal e vertical entre os cards */
+    margin-bottom: 60px;
+}
+
+/* Estilo do Card individual */
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding-bottom: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    margin-top: 15px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Responsividade Básica (para celulares não quebrarem o layout) */
+@media (max-width: 650px) {
+    .cards-grid {
+        grid-template-columns: 1fr; /* Vira 1 coluna em telas muito pequenas */
+    }
+    .site-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .carousel-static {
+        width: 100%;
+    }
+}
