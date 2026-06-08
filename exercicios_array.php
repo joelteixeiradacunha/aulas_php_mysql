@@ -31,3 +31,13 @@
 // ________($idade ___ $x ___ $y){
 // echo "Chave=" . ____ . ", Valor=" . ____;
 //  }
+
+//  EXERCÍCIO 6
+//  Qual o array resultante após o splice?
+//  $fruits = array('Maçãs', 'Bananas', 'Laranjas', 'Mexericas', 'Mangas');
+//array_splice($fruits, 1, 2);
+
+//  EXERCÍCIO 7
+//  Qual o array resultante após o splice?
+//  $fruits = array('Maçãs', 'Bananas', 'Laranjas', 'Mexericas', 'Mangas');
+//  array_shift($fruits);

@@ -122,80 +122,160 @@
 //  ADICIONAR ITENS AO ARRAY
 
 //  [] - ADICIONA UM ÚNICO ITEM NO FINAL DE UM ARRAY
-echo "[] - ADICIONA UM ÚNICO ITEM NO FINAL DE UM ARRAY <br>";
-$fruits = array("Maçã", "Banana", "Morango");
-var_dump($fruits);
-echo "<br>";
-$fruits[] = "Laranja";
-var_dump($fruits);
-echo "<br>";
-
-$fruits = array("Maçã", "Banana", "Morango");
-var_dump($fruits);
-echo "<br>";
-$fruits[] = "Laranja";
-$fruits[] = "Pera";
-$fruits[] = "Abacaxi";
-var_dump($fruits);
-echo "<br>";
-
-echo "[] - ADICIONA UM ÚNICO ITEM NO FINAL DE UM ARRAY ASSOCIATIVA <br>";
-echo "<br>";
-$cars = array("marca" => "Ford", "modelo" => "Mustang");
-var_dump($cars);
-$cars["cor"] = "Vermelho";
-$cars["ano"] = 2013;
-var_dump($cars);
-echo "<br>";
-
-//  ARRAY_PUSH() - ADICIONA UM OU MAIS ITENS AO FINAL DE UM ARRAY
-echo"ARRAY_PUSH() - ADICIONA UM OU MAIS ITENS AO FINAL DE UM ARRAY<br>";
-$fruits = array("Maçã", "Banana", "Morango");
-var_dump($fruits);
-echo "<br>";
-array_push($fruits, "Laranja", "Kiwi", "Limão");
-var_dump($fruits);
-echo "<br>";
+//echo "[] - ADICIONA UM ÚNICO ITEM NO FINAL DE UM ARRAY <br>";
+//$fruits = array("Maçã", "Banana", "Morango");
+//var_dump($fruits);
+//echo "<br>";
+//$fruits[] = "Laranja";
+//var_dump($fruits);
+//echo "<br>";
 //
-echo"ARRAY_PUSH() - ADICIONA UM OU MAIS ITENS AO FINAL DE UM ARRAY ASSOCIATIVA<br>";
-$cars = array("marca" => "Ford", "modelo" => "Mustang");
-var_dump($cars);
-echo "<br>";
-$cars += ["cor" => "Preto", "ano" => 1964];
-var_dump($cars);
-echo "<br>";
+//$fruits = array("Maçã", "Banana", "Morango");
+//var_dump($fruits);
+//echo "<br>";
+//$fruits[] = "Laranja";
+//$fruits[] = "Pera";
+//$fruits[] = "Abacaxi";
+//var_dump($fruits);
+//echo "<br>";
+//
+//echo "[] - ADICIONA UM ÚNICO ITEM NO FINAL DE UM ARRAY ASSOCIATIVA <br>";
+//echo "<br>";
+//$cars = array("marca" => "Ford", "modelo" => "Mustang");
+//var_dump($cars);
+//$cars["cor"] = "Vermelho";
+//$cars["ano"] = 2013;
+//var_dump($cars);
+//echo "<br>";
+//
+////  ARRAY_PUSH() - ADICIONA UM OU MAIS ITENS AO FINAL DE UM ARRAY
+//echo"ARRAY_PUSH() - ADICIONA UM OU MAIS ITENS AO FINAL DE UM ARRAY<br>";
+//$fruits = array("Maçã", "Banana", "Morango");
+//var_dump($fruits);
+//echo "<br>";
+//array_push($fruits, "Laranja", "Kiwi", "Limão");
+//var_dump($fruits);
+//echo "<br>";
+////
+//echo"ARRAY_PUSH() - ADICIONA UM OU MAIS ITENS AO FINAL DE UM ARRAY ASSOCIATIVA<br>";
+//$cars = array("marca" => "Ford", "modelo" => "Mustang");
+//var_dump($cars);
+//echo "<br>";
+//$cars += ["cor" => "Preto", "ano" => 1964];
+//var_dump($cars);
+//echo "<br>";
+//
+////  ARRAY_UNSHIFT() - ADICIONA UM OU MAIS ITENS NO INÍCIO DE UM ARRAY
+//echo "ARRAY_UNSHIFT() - ADICIONA UM OU MAIS ITENS NO INÍCIO DE UM ARRAY<br>";
+//$fruits = array("Maçã", "Banana", "Morango");
+//var_dump($fruits);
+//echo "<br>";
+//array_unshift($fruits, "Laranja", "Kiwi", "Limão");
+//var_dump($fruits);
+//echo "<br>";
+////
+////  ARRAY_SPLICE() - REMOVE UMA PORÇÃO DO ARRAY E SUBSTITUI COM NOVOS ELEMENTOS
+//echo "ARRAY_SPLICE() - REMOVE UMA PORÇÃO DO ARRAY E SUBSTITUI COM NOVOS ELEMENTOS<br>";
+//$fruits = array("Maçã", "Banana", "Morango", "Pera", "Abacaxi");
+//var_dump($fruits);
+//echo "<br>";
+//$new_fruit = array("Laranja", "Kiwi", "Maracujá");
+//array_splice($fruits, 4, 0, $new_fruit); // insere "Laranja" no index 1
+//var_dump($fruits);
+//echo "<br>";
+////
+////  ARRAY_MERGE() - MESCLA DUAS OU MAIS ARRAYS
+//echo "ARRAY_MERGE() - MESCLA DUAS OU MAIS ARRAYS<br>";
+//$fruits1 = array("Maçã", "Banana");
+//$fruits2 = array("Morango", "Laranja");
+//$fruits3 = array("Pera", "Abacaxi");
+//var_dump($fruits1);
+//echo "<br>";
+//var_dump($fruits2);
+//echo "<br>";
+//var_dump($fruits3);
+//echo "<br>";
+//$result = array_merge($fruits1, $fruits2, $fruits3);
+//echo "<pre>";
+//var_dump($result);
+//echo "</pre>";
 
-//  ARRAY_UNSHIFT() - ADICIONA UM OU MAIS ITENS NO INÍCIO DE UM ARRAY
-echo "ARRAY_UNSHIFT() - ADICIONA UM OU MAIS ITENS NO INÍCIO DE UM ARRAY<br>";
-$fruits = array("Maçã", "Banana", "Morango");
-var_dump($fruits);
-echo "<br>";
-array_unshift($fruits, "Laranja", "Kiwi", "Limão");
-var_dump($fruits);
-echo "<br>";
-//
-//  ARRAY_SPLICE() - REMOVE UMA PORÇÃO DO ARRAY E SUBSTITUI COM NOVOS ELEMENTOS
-echo "ARRAY_SPLICE() - REMOVE UMA PORÇÃO DO ARRAY E SUBSTITUI COM NOVOS ELEMENTOS<br>";
-$fruits = array("Maçã", "Banana", "Morango", "Pera", "Abacaxi");
-var_dump($fruits);
-echo "<br>";
-$new_fruit = array("Laranja", "Kiwi", "Maracujá");
-array_splice($fruits, 4, 0, $new_fruit); // insere "Laranja" no index 1
-var_dump($fruits);
-echo "<br>";
-//
-//  ARRAY_MERGE() - MESCLA DUAS OU MAIS ARRAYS
-echo "ARRAY_MERGE() - MESCLA DUAS OU MAIS ARRAYS<br>";
-$fruits1 = array("Maçã", "Banana");
-$fruits2 = array("Morango", "Laranja");
-$fruits3 = array("Pera", "Abacaxi");
-var_dump($fruits1);
-echo "<br>";
-var_dump($fruits2);
-echo "<br>";
-var_dump($fruits3);
-echo "<br>";
-$result = array_merge($fruits1, $fruits2, $fruits3);
-echo "<pre>";
-var_dump($result);
-echo "</pre>";
+
+//  REMOVER ITENS DO ARRAY
+
+//  ARRAY SPLICE()
+//  Remove uma porção do array começando de uma posição inicial e um comprimento
+echo "Remove uma porção do array começando de uma posição inicial e um comprimento<br>";
+$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+array_splice($cars, 1, 1);
+var_dump($cars);
+echo "<br><br>";
+
+echo "Remove múltiplos itens do array começando de uma posição inicial e um comprimento<br>";
+//$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+//array_splice($cars, 1, 1);
+//var_dump($cars);
+echo "<br><br>";
+
+
+//  UNSET()
+//  Remove o elemento associado a uma chave específica
+echo "Remove o elemento associado a uma chave específica<br>";
+//$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+//unset($cars[0]);
+//var_dump($cars);
+echo "<br><br>";
+
+echo "Remove múltiplos elementos associados a uma chave específica<br>";
+//$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+//unset($cars[0], $cars[2]);
+//var_dump($cars);
+echo "<br><br>";
+
+echo "Remove itens de um array associativo<br>";
+$cars = array("marca" => "Chevrolet", "modelo" => "Celta", "ano" => 2001);
+unset($cars["modelo"]);
+var_dump($cars);
+echo "<br><br>";
+
+//  ARRAY_DIFF()
+//  Remove itens de um array associativo. Retorna um novo array
+//echo "Remove itens de um array associativo. Retorna um novo array.<br>";
+//$carros = array("marca" => "Chevrolet", "modelo" => "Celta", "ano" => 2001);
+//$novoArray = array_diff($carros, ["Celta", 2001]);
+//var_dump($carros);
+echo "<br><br>";
+
+
+//  ARRAY_POP()
+//  Remove o último item do array
+echo "Remove o último item do array<br>";
+//$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+//array_pop($cars);
+//var_dump($cars);
+echo "<br><br>";
+
+//  ARRAY_SHIFT()
+//  Remove o primeiro item do array
+echo "Remove o último item do array<br>";
+//$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+//array_shift($cars);
+//var_dump($cars);
+echo "<br><br>";
+
+//  Ordenando arrays
+//  sort()
+//  Ordem ascendente
+echo "Ordenando em ordem ascendente<br>";
+//$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+//sort($cars);
+//var_dump($cars);
+echo "<br><br>";
+
+//  sort()
+//  Ordem desscendente
+echo "Ordenando em ordem descendente<br>";
+//$cars = array("Chevrolet", "Fiat", "Volkswagen", "Ford");
+//rsort($cars);
+//var_dump($cars);
+echo "<br><br>";
