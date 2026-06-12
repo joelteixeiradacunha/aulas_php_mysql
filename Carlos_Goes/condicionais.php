@@ -35,3 +35,30 @@ if ($diaDaSemana == "Segunda"){
 }else{
     echo "Verifique se você digitou o dia da semana corretamente,";
 }
+
+$diaDaSemanaSwitch = "Terça-feira";
+
+switch ($diaDaSemanaSwitch) {
+    case "Segunda":
+        echo "<br>É o melhor dia da semana!";
+        break;
+    case "Terça":
+        echo "<br>Falta muito para o final de semana.";
+        break;
+    case "Quarta":
+        echo "<br>Estamos no meio da semana.";
+        break;
+    case "Quinta":
+        echo "<br>Véspera de sexta. Graças a Deus.";
+    case "Sexta":
+        echo "<br>Que alegria. Dia de bebemorar.";
+        break;
+    case "Sabado":
+        echo "<br>Vou dormir até acordar.";
+        break;
+    case "Domingo":
+        echo "<br>Ahhhh. Está acabando o final de semana.";
+        break;
+    default:
+        echo "<br>Digite corretamento o dia da semana!!!";
+}
