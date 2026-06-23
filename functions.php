@@ -20,7 +20,6 @@ function myMessage()
 {
     echo "Hello World!";
 }
-
 //  CHAMANDO A FUNÇÃO
 myMessage();
 
@@ -31,81 +30,97 @@ myMessage();
 
 function familyName($name)
 {
-    echo "$name Cunha. <br>";
+    echo "$name Lacerda. <br>";
 }
 
+echo "<br>";
 familyName("Joel");
 familyName("Salete");
-familyName("Daniel");
-familyName("Neide");
 
+echo "<br>";
 function familyNameBorn($name, $year)
 {
-    echo "$name Cunha. Nascido em $year. <br>";
+    echo "$name Lacerda. Nascido em $year. <br>";
 
 }
-
+//
 familyNameBorn("Joel", 1968);
 familyNameBorn("Salete", 1967);
 familyNameBorn("Daniel", 1959);
 familyNameBorn("Neide", 1957);
 
-//  Parâmetro com valor padrão
-
-function setHeight($height = 50) {
-    echo "A altura é: $height <br>";
-}
-
-setHeight(350);
-setHeight();
-
-//  RETORNANDO VALORES
-
-function sum($x, $y) {
-    $z = $x + $y;
-    return $z;
-}
-
-echo "5 + 10 = " . sum(5, 10) . "<br>";
-echo "7 + 13 = " . sum(7, 13) . "<br>";
-echo "2 + 4 = " . sum(2, 4);
-
-//  Passando argumentos por referência
-//  Quando um argumento de função é passado por referência, as alterações feitas no argumento também alteram a variável que foi passada como argumento. Para transformar um argumento de função em uma referência, use o operador & antes do argumento/parâmetro:
-
-function add_five(&$value) {
-    $value += 5;
-}
-
-$num = 2;
-add_five($num);
-echo "<br>" . $num;
-
-//  Número variável de parâmetros
-//  Use o operador "..." na frente do parâmetro da função
-
-function sumMyNumbers(...$x) {
-    $n = 0;
-    $len = count($x);
-    for($i = 0; $i < $len; $i++) {
-        $n += $x[$i];
+echo "<br><br>";
+function idade($idade)
+{
+    if ($idade <= 12) {
+        echo "Você tem $idade anos. Ainda é criança";
+    } elseif ($idade <= 19){
+        echo "Você tem $idade anos e é adolescente.";
+    } elseif ($idade <= 60){
+        echo "Você tem $idade e é adulto.";
+    } else {
+        echo "Você tem $idade e já é idoso.";
     }
-    return $n;
 }
 
-$a = sumMyNumbers(5, 2, 6, 2, 7, 7);
-echo "<br>" . $a;
+idade(70);
 
-//  Pode haver somente um argumento com tamanho variável, e tem que ser o último
-
-function myFamily($lastname, ...$firstname) {
-    $txt = "";
-    $len = count($firstname);
-    for($i = 0; $i < $len; $i++) {
-        $txt = $txt."Hi, $firstname[$i] $lastname.<br>";
-    }
-    return $txt;
-}
-
-$a = myFamily("Doe", "Jane", "John", "Joey");
-echo "<br>" . $a;
+////  Parâmetro com valor padrão
+//
+//function setHeight($height = 50) {
+//    echo "A altura é: $height <br>";
+//}
+//
+//setHeight(350);
+//setHeight();
+//
+////  RETORNANDO VALORES
+////  A instrução `return` encerra imediatamente a execução de uma função e retorna um valor para a linha de código que a chamou:
+//function sum($x, $y) {
+//    $z = $x + $y;
+//    return $z;
+//}
+//
+//echo "5 + 10 = " . sum(5, 10) . "<br>";
+//echo "7 + 13 = " . sum(7, 13) . "<br>";
+//echo "2 + 4 = " . sum(2, 4);
+//
+////  Passando argumentos por referência
+////  Quando um argumento de função é passado por referência, as alterações feitas no argumento também alteram a variável que foi passada como argumento. Para transformar um argumento de função em uma referência, use o operador & antes do argumento/parâmetro:
+//
+//function add_five(&$value) {
+//    $value += 5;
+//}
+//
+//$num = 2;
+//add_five($num);
+//echo "<br>" . $num;
+//
+////  Número variável de parâmetros
+////  Use o operador "..." na frente do parâmetro da função
+//
+//function sumMyNumbers(...$x) {
+//    $n = 0;
+//    $len = count($x);
+//    for($i = 0; $i < $len; $i++) {
+//        $n += $x[$i];
+//    }
+//    return $n;
+//}
+//
+//$a = sumMyNumbers(5, 2, 6, 2, 7, 7);
+//echo "<br>" . $a;
+//
+////  Pode haver somente um argumento com tamanho variável, e tem que ser o último
+//
+//function myFamily($lastname, ...$firstname) {
+//    $txt = "";
+//    $len = count($firstname);
+//    for($i = 0; $i < $len; $i++) {
+//        $txt = $txt."Hi, $firstname[$i] $lastname.<br>";
+//    }
+//    return $txt;
+//}
+//
+//$a = myFamily("Doe", "Jane", "John", "Joey");
+//echo "<br>" . $a;

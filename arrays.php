@@ -273,7 +273,7 @@ var_dump($cars);
 echo "<br><br>";
 
 //  rsort()
-//  Ordem desscendente
+//  Ordem descendente
 echo "Ordenando em ordem descendente<br>";
 $cars = array("Chevrolet", "Fiat", 1850, "Volkswagen", "Ford", 2001);
 rsort($cars);
