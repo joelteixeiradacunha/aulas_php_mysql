@@ -1,0 +1,213 @@
+<!--Aqui está a solução completa para o seu site, estruturada em um único arquivo de forma limpa, moderna e totalmente funcional.-->
+
+<!--Para garantir a melhor fidelidade visual, utilizei a fonte **Open Sans Condensed** diretamente do Google Fonts e selecionei 5 imagens de alta qualidade de carros esportivos vindas do Unsplash.-->
+
+<!--### Código Completo (index.html)-->
+
+<!--Você pode copiar o código abaixo, salvá-lo como `index.html` e abri-lo diretamente no seu navegador:-->
+
+<!--```html-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Analysis Tech</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Configurações Globais de Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- HEADER --- */
+        .site-header {
+            background-color: #b3541e; /* Laranja-amarronzado */
+            width: 1200px;
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        /* Menu de Navegação */
+        .header-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .header-menu a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .header-menu a:hover {
+            opacity: 0.8;
+        }
+
+        /* Título do Lado Direito */
+        .header-title {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-transform: lowercase; /* Mantém o padrão moderno da frase */
+        }
+
+        .header-title .tech-span {
+            color: #000000; /* Palavra 'tech' na cor preta */
+        }
+
+        /* --- MAIN --- */
+        .site-main {
+            background-color: #FDFCFC;
+            width: 1200px;
+            min-height: 600px;
+        }
+
+        /* Carrossel Automático */
+        .carousel-container {
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .carousel-track {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Seção de Conteúdo apenas para demonstração do Main */
+        .main-content {
+            padding: 50px;
+            text-align: center;
+            color: #333333;
+        }
+
+        .main-content h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="header-menu">
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#treinamentos">Treinamentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-title">
+        fluid analysis <span class="tech-span">tech</span>
+    </div>
+</header>
+
+<main class="site-main">
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-slide active">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Carro Esportivo 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80" alt="Carro Esportivo 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=80" alt="Carro Esportivo 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80" alt="Carro Esportivo 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80" alt="Carro Esportivo 5">
+            </div>
+        </div>
+    </div>
+
+    <section class="main-content">
+        <h1>Análise de Fluidos de Alta Performance</h1>
+        <p>Sua estrutura configurada com precisão técnica e design responsivo dentro dos limites solicitados.</p>
+    </section>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlideIndex = 0;
+        const transitionInterval = 5000; // Tempo de transição: 5 segundos
+
+        function changeSlide() {
+            // Remove a classe ativa do slide que está aparecendo
+            slides[currentSlideIndex].classList.remove('active');
+
+            // Calcula o próximo índice (retorna a 0 quando chega ao final)
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+
+            // Adiciona a classe ativa ao novo slide
+            slides[currentSlideIndex].classList.add('active');
+        }
+
+        // Define o timer para rodar a função a cada 5 segundos
+        setInterval(changeSlide, transitionInterval);
+    });
+</script>
+</body>
+</html>
+
+```
+
+---
+
+### Destaques da Implementação
+
+* **Estrutura de Blocos Exatos:** O header e o main estão centralizados na tela do navegador, respeitando rigorosamente a largura fixa exigida de `1200px`.
+* **Identidade Visual:** A cor de fundo do header reflete o tom laranja-amarronzado desejado, criando contraste direto com a palavra **tech** em preto e o restante em branco.
+* **Efeito Suave no Carrossel:** Em vez de cortes bruscos, o JavaScript trabalha em conjunto com o CSS (`opacity` e `transition`) para criar um efeito *fade* elegante a cada 5 segundos.
