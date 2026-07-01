@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Semissubmersível - Mar Aberto</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+
+<aside id="sidebar">
+    <h1>Química do Petróleo</h1>
+    <div class="content">
+        <section>
+            <h2>O que é o Petróleo?</h2>
+            <p>O petróleo é um combustível fóssil líquido, natural e inflamável. É uma mistura complexa de hidrocarbonetos e pequenas quantidades de outrosocompostos orgânicos.</p>
+        </section>
+        <section>
+            <h2>Como ocorre sua formação</h2>
+            <p>Forma-se pela decomposição de matéria orgânica (plâncton e algas) soterrada no fundo de oceanos ou lagos há milhões de anos, sob condições extremas de alta pressão e temperatura, em ambientes anóxicos.</p>
+        </section>
+        <section>
+            <h2>Composição Química</h2>
+            <p>A base do petróleo são os hidrocarbonetos (Carbono e Hidrogênio). Ele inclui alcanos, cicloalcanos e hidrocarbonetos aromáticos, além de traços de enxofre, nitrogênio e oxigênio.</p>
+        </section>
+        <section>
+            <h2>Processo de Extração</h2>
+            <p>Após a perfuração do poço marítimo, o petróleo flui devido à pressão natural ou é extraído por métodos de elevação artificial até a plataforma, onde passa por separação primária.</p>
+        </section>
+        <section>
+            <h2>Refino do Petróleo</h2>
+            <p>Ocorre através da destilação fracionada em refinarias, onde o petróleo é aquecido e separado em frações por ponto de ebulição (gás de cozinha, gasolina, querosene, diesel, asfalto).</p>
+        </section>
+        <section>
+            <h2>Impactos Ambientais</h2>
+            <p>A queima de derivados emite gases de efeito estufa (CO2). Vazamentos no oceano podem causar marés negras catastróficas, destruindo ecossistemas marinhos inteiros.</p>
+        </section>
+        <section>
+            <h2>Importância Econômica</h2>
+            <p>É a principal matriz energética mundial e matéria-prima fundamental para a indústria petroquímica na produção de plásticos, fertilizantes, tintas e medicamentos.</p>
+        </section>
+    </div>
+</aside>
+
+<main id="canvas-container">
+    <div id="instructions">
+        <strong>Simulação em Mar Aberto (Bacia de Campos)</strong><br>
+        Botão Esquerdo: Rotacionar Câmera | Botão Direito / Shift: Mover | Scroll: Zoom<br>
+        <span style="color: #ffcc00; font-weight: bold;">Aproxime a câmera da base amarela para ver o reflexo e o movimento das ondas.</span>
+    </div>
+</main>
+
+<div id="info-popup" class="hidden">
+    <button id="close-popup">&times;</button>
+    <h2 id="popup-title">Sistema Hidráulico</h2>
+    <p id="popup-desc">Descrição técnica do módulo industrial.</p>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

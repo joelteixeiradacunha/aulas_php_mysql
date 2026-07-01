@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livraria Era uma vez...</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
+
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <h1 class="logo">Livraria Era uma vez...</h1>
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="header-bottom">
+    <ul class="menu">
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Lançamentos</a></li>
+      <li><a href="#">Eventos</a></li>
+      <li><a href="#">Nossas Lojas</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="carousel-container">
+      <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80" alt="Tecnologia 1">
+        <div class="slide-info">
+          <p><strong>Autor:</strong> Robert C. Martin</p>
+          <p><strong>Editora:</strong> Alta Books</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1000&q=80" alt="Tecnologia 2">
+        <div class="slide-info">
+          <p><strong>Autor:</strong> Andrew Hunt</p>
+          <p><strong>Editora:</strong> Bookman</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80" alt="Tecnologia 3">
+        <div class="slide-info">
+          <p><strong>Autor:</strong> Martin Fowler</p>
+          <p><strong>Editora:</strong> Novatec</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1000&q=80" alt="Tecnologia 4">
+        <div class="slide-info">
+          <p><strong>Autor:</strong> Eric Evans</p>
+          <p><strong>Editora:</strong> Casa do Código</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" alt="Tecnologia 5">
+        <div class="slide-info">
+          <p><strong>Autor:</strong> Thomas Cormen</p>
+          <p><strong>Editora:</strong> MIT Press</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Lançamentos</h2>
+    <div class="cards-container" id="lancamentos-container">
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Notícias</h2>
+    <div class="noticias-container" id="noticias-container">
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Top 10 books</h2>
+    <div class="cards-container" id="top10-container">
+    </div>
+  </section>
+</main>
+
+<script>
+  // --- LÓGICA DO CARROSSEL (Transição de 3 segundos) ---
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 3000);
+
+  // --- GERAÇÃO DOS CARDS REPETITIVOS ---
+  // (Para não poluir o HTML com centenas de linhas de código repetido,
+  // os cards solicitados são renderizados por este pequeno script).
+
+  // Lançamentos (10 cards)
+  const lancamentos = document.getElementById('lancamentos-container');
+  for(let i = 1; i <= 10; i++) {
+    lancamentos.innerHTML += `
+                <div class="card-lancamento">
+                    <img src="https://picsum.photos/200/300?random=${i}" alt="Capa Livro ${i}">
+                    <div class="card-content">
+                        <h3>Título do Livro ${i}</h3>
+                        <p>Uma breve e intrigante descrição sobre este maravilhoso livro de ficção e aventura.</p>
+                        <p><strong>Editora:</strong> Fantasia Ed.</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#">Mais informações</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+  }
+
+  // Notícias (4 cards)
+  const noticias = document.getElementById('noticias-container');
+  for(let i = 1; i <= 4; i++) {
+    noticias.innerHTML += `
+                <div class="card-noticia">
+                    <img src="https://picsum.photos/200/200?random=${i+10}" alt="Notícia ${i}">
+                    <div class="noticia-content">
+                        <h4>Grande prêmio de literatura anuncia os finalistas de 2026</h4>
+                        <p>Este texto possui no máximo trinta palavras para descrever a notícia recente sobre o mundo literário e as grandes novidades que estão chegando para os amantes da leitura este ano.</p>
+                        <div class="noticia-date">Publicado em: 26 Jun 2026</div>
+                        <a href="#">Leia mais...</a>
+                    </div>
+                </div>
+            `;
+  }
+
+  // Top 10 Books (10 cards)
+  const top10 = document.getElementById('top10-container');
+  for(let i = 1; i <= 10; i++) {
+    top10.innerHTML += `
+                <div class="top10-card">
+                    <img src="https://picsum.photos/200/300?random=${i+20}" alt="Top Book ${i}">
+                    <div class="top10-content">
+                        <h3>Bestseller ${i}</h3>
+                        <p>Breve descrição do livro que conquistou milhões de leitores ao redor do mundo inteiro.</p>
+                        <div class="author-pub">
+                            Autor: João Silva<br>
+                            Editora: Sucesso
+                        </div>
+                        <a href="#" class="btn-saibamais">Saiba mais...</a>
+                    </div>
+                </div>
+            `;
+  }
+</script>
+</body>
+</html>

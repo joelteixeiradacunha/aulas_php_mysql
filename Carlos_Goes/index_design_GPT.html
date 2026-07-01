@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Livraria Era uma vez...</title>
+
+    <!-- Fonte Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            margin:0 10%;
+            background:#F9F5FC;
+            font-family:'Roboto',sans-serif;
+            font-size:16px;
+            font-weight:300;
+        }
+
+        /* ================= HEADER ================= */
+
+        header{
+            width:100%;
+            background:#3F41AA;
+            color:#FFF;
+            position:relative;
+            padding:25px;
+        }
+        .logo{
+            font-family:Verdana, Geneva, sans-serif;
+            font-size:28px;
+            color:#FFF;
+            display:flex;
+            align-items:center;
+            min-height:70px;
+        }
+        /* Redes sociais */
+        .social{
+            position:absolute;
+            right:25px;
+            top:15px;
+        }
+        .social a{
+            color:#FFF;
+            text-decoration:none;
+            margin-left:18px;
+            font-size:20px;
+            transition:.3s;
+        }
+        .social a:hover{
+            /*opacity:.7;*/
+            color: #0AFF62;
+        }
+
+        /* Menu */
+        nav{
+            position:absolute;
+            right:25px;
+            bottom:15px;
+        }
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:30px;
+        }
+        nav a{
+            color:#FFF;
+            text-decoration:none;
+            font-size:17px;
+            font-weight: 600;
+            transition:.3s;
+        }
+        nav a:hover{
+            /*text-decoration:underline;*/
+            background-color:#0AFF62;
+            padding: 10px;
+            border-radius: 5px;
+            color: #000;
+        }
+
+        /* ================= MAIN ================= */
+        main{
+            margin-top:10px;
+        }
+
+        /* Carrossel */
+        .carousel{
+            width:100%;
+            height:300px;
+            overflow:hidden;
+            border-radius:0px 0px 10px 10px;
+            position:relative;
+        }
+        .slides{
+            display:flex;
+            width:500%;
+            height:100%;
+            animation:slide 15s infinite ease-in-out;
+        }
+        .slide{
+            width:20%;
+            position:relative;
+        }
+        .slide img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+        }
+
+        /* Texto */
+
+        .info{
+
+            position:absolute;
+            left:25px;
+            bottom:25px;
+            color:#FFF;
+            background:rgba(0,0,0,0.55);
+            padding:12px 18px;
+            border-radius:8px;
+
+        }
+
+        .info h3{
+
+            font-size:22px;
+            margin-bottom:5px;
+
+        }
+
+        .info p{
+
+            font-size:16px;
+
+        }
+
+        @keyframes slide{
+
+            0%,18%{
+                transform:translateX(0);
+            }
+
+            20%,38%{
+                transform:translateX(-20%);
+            }
+
+            40%,58%{
+                transform:translateX(-40%);
+            }
+
+            60%,78%{
+                transform:translateX(-60%);
+            }
+
+            80%,98%{
+                transform:translateX(-80%);
+            }
+
+            100%{
+                transform:translateX(0);
+            }
+
+        }
+
+        /* ================= RESPONSIVO ================= */
+
+        @media(max-width:900px){
+
+            header{
+
+                padding:20px;
+
+            }
+
+            .logo{
+
+                justify-content:center;
+                text-align:center;
+
+            }
+
+            .social{
+
+                position:static;
+                margin-top:15px;
+                text-align:center;
+
+            }
+
+            nav{
+
+                position:static;
+                margin-top:20px;
+
+            }
+
+            nav ul{
+
+                justify-content:center;
+                flex-wrap:wrap;
+                gap:15px;
+
+            }
+
+            .info h3{
+
+                font-size:18px;
+
+            }
+
+        }
+        /*==========================
+        LANÇAMENTOS
+==========================*/
+
+        .lancamentos{
+
+            margin:50px 0;
+
+        }
+
+        .lancamentos h2{
+
+            font-size:34px;
+            color:#AA3939;
+            margin-bottom:30px;
+            text-align:center;
+
+        }
+
+        .cards{
+
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:25px;
+
+        }
+
+        .card{
+
+            background:#FFF;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 3px 12px rgba(0,0,0,.12);
+            transition:.3s;
+            display:flex;
+            flex-direction:column;
+
+        }
+
+        .card:hover{
+
+            transform:translateY(-5px);
+
+        }
+
+        .card img{
+
+            width:100%;
+            height:280px;
+            object-fit:cover;
+
+        }
+
+        .card-content{
+
+            padding:15px;
+            flex:1;
+
+        }
+
+        .card-content h3{
+
+            color:#AA3939;
+            margin-bottom:10px;
+            font-size:22px;
+
+        }
+
+        .card-content p{
+
+            margin-bottom:10px;
+            line-height:1.5;
+
+        }
+
+        .editora{
+
+            font-weight:bold;
+            color:#444;
+
+        }
+
+        .nota{
+
+            margin-top:10px;
+            color:#F39C12;
+            font-size:18px;
+
+        }
+
+        .card-footer{
+
+            background:#AA3939;
+            text-align:center;
+            padding:14px;
+
+        }
+
+        .card-footer a{
+
+            color:#FFF;
+            text-decoration:none;
+            font-weight:bold;
+
+        }
+
+        .card-footer a:hover{
+
+            text-decoration:underline;
+
+        }
+
+        /*==========================
+         NOTÍCIAS
+===========================*/
+
+        .noticias{
+
+            margin:60px 0;
+
+        }
+
+        .noticias h2{
+
+            text-align:center;
+            font-size:34px;
+            color:#AA3939;
+            margin-bottom:35px;
+
+        }
+
+        .noticias-grid{
+
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+            gap:25px;
+            justify-content:center;
+
+        }
+
+        .noticia-card{
+
+            background:#FFF;
+            display:flex;
+            width:100%;
+            max-width:400px;
+            min-height:200px;
+
+            border-radius:10px;
+            overflow:hidden;
+
+            box-shadow:0 4px 12px rgba(0,0,0,.10);
+
+            transition:.3s;
+
+        }
+
+        .noticia-card:hover{
+
+            transform:translateY(-4px);
+
+        }
+
+        .noticia-card img{
+
+            width:180px;
+            max-width:180px;
+            height:auto;
+            object-fit:cover;
+
+        }
+
+        .noticia-info{
+
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+
+            padding:15px;
+
+        }
+
+        .noticia-info h3{
+
+            color:#AA3939;
+            font-size:20px;
+            margin-bottom:10px;
+
+        }
+
+        .noticia-info p{
+
+            font-size:15px;
+            line-height:1.5;
+            color:#555;
+
+        }
+
+        .data{
+
+            margin-top:12px;
+            font-size:14px;
+            color:#888;
+
+        }
+
+        .noticia-info a{
+
+            margin-top:12px;
+            color:#AA3939;
+            font-weight:bold;
+            text-decoration:none;
+
+        }
+
+        .noticia-info a:hover{
+
+            text-decoration:underline;
+
+        }
+
+        /*==========================
+         TOP 10 BOOKS
+ ===========================*/
+
+        .top-books{
+
+            margin:70px 0;
+
+        }
+
+        .top-books h2{
+
+            text-align:center;
+            font-size:34px;
+            color:#AA3939;
+            margin-bottom:35px;
+
+        }
+
+        .top-books-grid{
+
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:30px;
+
+        }
+
+        .book-card{
+
+            background:transparent;
+            display:flex;
+            flex-direction:column;
+            transition:all .35s ease;
+            border:none;
+            overflow:hidden;
+
+        }
+
+        .book-card:hover{
+
+            transform:scale(1.06);
+
+            box-shadow:
+                    12px 12px 25px rgba(0,0,0,.20);
+
+        }
+
+        .book-card img{
+
+            width:100%;
+            height:290px;
+            object-fit:cover;
+            border-radius:8px;
+
+        }
+
+        .book-info{
+
+            padding:15px 5px;
+
+        }
+
+        .book-info h3{
+
+            color:#AA3939;
+            font-size:22px;
+            margin-bottom:10px;
+
+        }
+
+        .book-info p{
+
+            margin-bottom:8px;
+            line-height:1.5;
+            color:#444;
+
+        }
+
+        .book-info strong{
+
+            color:#222;
+
+        }
+
+        .book-btn{
+
+            display:inline-block;
+            margin-top:12px;
+            padding:12px 18px;
+
+            background:#0A2AFF;
+            color:#FFCC22;
+
+            text-decoration:none;
+            border-radius:6px;
+
+            font-weight:bold;
+
+            transition:.3s;
+
+        }
+
+        .book-btn:hover{
+
+            background:#0820c8;
+
+        }
+
+        @media(max-width:700px){
+
+            .top-books-grid{
+
+                grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        Livraria Era uma vez...
+    </div>
+
+    <div class="social">
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Lançamentos</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Nossas Lojas</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <div class="carousel">
+
+        <div class="slides">
+
+            <div class="slide">
+
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80">
+
+                <div class="info">
+
+                    <h3>Editora Novatec</h3>
+                    <p>Autor: Robert C. Martin</p>
+
+                </div>
+
+            </div>
+
+            <div class="slide">
+
+                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80">
+
+                <div class="info">
+
+                    <h3>Editora O'Reilly</h3>
+                    <p>Autor: Martin Fowler</p>
+
+                </div>
+
+            </div>
+
+            <div class="slide">
+
+                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80">
+
+                <div class="info">
+
+                    <h3>Editora Addison-Wesley</h3>
+                    <p>Autor: Kent Beck</p>
+
+                </div>
+
+            </div>
+
+            <div class="slide">
+
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=80">
+
+                <div class="info">
+
+                    <h3>Editora Packt</h3>
+                    <p>Autor: Mark Lutz</p>
+
+                </div>
+
+            </div>
+
+            <div class="slide">
+
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80">
+
+                <div class="info">
+
+                    <h3>Editora Casa do Código</h3>
+                    <p>Autor: Paulo Silveira</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <section class="lancamentos">
+
+        <h2>Lançamentos</h2>
+
+        <div class="cards">
+
+            <!-- Card 1 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Clean Code</h3>
+
+                    <p>
+                        Um dos livros mais importantes sobre boas práticas de desenvolvimento de software.
+                    </p>
+
+                    <p class="editora">Editora: Alta Books</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,9
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Refactoring</h3>
+
+                    <p>Aprenda técnicas modernas para melhorar códigos existentes.</p>
+
+                    <p class="editora">Editora: Novatec</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,8
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Design Patterns</h3>
+
+                    <p>Padrões clássicos para construção de software orientado a objetos.</p>
+
+                    <p class="editora">Editora: Addison-Wesley</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,7
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Python Fluente</h3>
+
+                    <p>Guia completo para dominar Python em nível avançado.</p>
+
+                    <p class="editora">Editora: Novatec</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,8
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Java Efetivo</h3>
+
+                    <p>Boas práticas para desenvolvimento profissional com Java.</p>
+
+                    <p class="editora">Editora: Bookman</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,9
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>JavaScript Moderno</h3>
+
+                    <p>ES6+, APIs modernas e desenvolvimento Front-end.</p>
+
+                    <p class="editora">Editora: Casa do Código</p>
+
+                    <div class="nota">
+                        ★★★★☆ 4,6
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 7 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Docker na Prática</h3>
+
+                    <p>Containers, Kubernetes e DevOps para aplicações modernas.</p>
+
+                    <p class="editora">Editora: Casa do Código</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,8
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 8 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Arquitetura Limpa</h3>
+
+                    <p>Como criar sistemas robustos e fáceis de manter.</p>
+
+                    <p class="editora">Editora: Alta Books</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,9
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 9 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>React Profissional</h3>
+
+                    <p>Desenvolvimento de interfaces modernas utilizando React.</p>
+
+                    <p class="editora">Editora: Casa do Código</p>
+
+                    <div class="nota">
+                        ★★★★☆ 4,7
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+            <!-- Card 10 -->
+            <article class="card">
+
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=600&q=80">
+
+                <div class="card-content">
+
+                    <h3>Inteligência Artificial</h3>
+
+                    <p>Introdução aos principais conceitos de IA e Machine Learning.</p>
+
+                    <p class="editora">Editora: O'Reilly</p>
+
+                    <div class="nota">
+                        ★★★★★ 4,9
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">Mais informações</a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+    <section class="noticias">
+
+        <h2>Notícias</h2>
+
+        <div class="noticias-grid">
+
+            <!-- Notícia 1 -->
+            <article class="noticia-card">
+
+                <img src="https://picsum.photos/300/220?random=1" alt="Notícia">
+
+                <div class="noticia-info">
+
+                    <div>
+
+                        <h3>Feira Literária reúne milhares de leitores</h3>
+
+                        <p>
+                            A maior feira literária do ano apresentou novidades das principais editoras,
+                            autores convidados e lançamentos exclusivos para os visitantes.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <div class="data">Publicado em 26/06/2026</div>
+
+                        <a href="#">Leia mais...</a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Notícia 2 -->
+            <article class="noticia-card">
+
+                <img src="https://picsum.photos/300/220?random=2" alt="Notícia">
+
+                <div class="noticia-info">
+
+                    <div>
+
+                        <h3>Livros de tecnologia lideram vendas</h3>
+
+                        <p>
+                            Obras sobre inteligência artificial, programação e computação em nuvem
+                            continuam entre os títulos mais vendidos do primeiro semestre.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <div class="data">Publicado em 22/06/2026</div>
+
+                        <a href="#">Leia mais...</a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Notícia 3 -->
+            <article class="noticia-card">
+
+                <img src="https://picsum.photos/300/220?random=3" alt="Notícia">
+
+                <div class="noticia-info">
+
+                    <div>
+
+                        <h3>Autores brasileiros ganham destaque internacional</h3>
+
+                        <p>
+                            Novas traduções ampliam a presença de escritores brasileiros
+                            em importantes eventos literários realizados na Europa.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <div class="data">Publicado em 18/06/2026</div>
+
+                        <a href="#">Leia mais...</a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Notícia 4 -->
+            <article class="noticia-card">
+
+                <img src="https://picsum.photos/300/220?random=4" alt="Notícia">
+
+                <div class="noticia-info">
+
+                    <div>
+
+                        <h3>Clube de leitura anuncia calendário anual</h3>
+
+                        <p>
+                            A programação inclui encontros mensais, palestras,
+                            debates e sessões de autógrafos com autores convidados.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <div class="data">Publicado em 15/06/2026</div>
+
+                        <a href="#">Leia mais...</a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+    <section class="top-books">
+
+        <h2>Top 10 Books</h2>
+
+        <div class="top-books-grid">
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=101" alt="Livro">
+                <div class="book-info">
+                    <h3>Clean Code</h3>
+                    <p>Um clássico sobre desenvolvimento de software limpo e sustentável.</p>
+                    <p><strong>Autor:</strong> Robert C. Martin</p>
+                    <p><strong>Editora:</strong> Alta Books</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=102" alt="Livro">
+                <div class="book-info">
+                    <h3>Refactoring</h3>
+                    <p>Melhore códigos existentes utilizando técnicas modernas.</p>
+                    <p><strong>Autor:</strong> Martin Fowler</p>
+                    <p><strong>Editora:</strong> Novatec</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=103" alt="Livro">
+                <div class="book-info">
+                    <h3>Design Patterns</h3>
+                    <p>Padrões de projeto para aplicações orientadas a objetos.</p>
+                    <p><strong>Autor:</strong> GoF</p>
+                    <p><strong>Editora:</strong> Addison-Wesley</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=104" alt="Livro">
+                <div class="book-info">
+                    <h3>The Pragmatic Programmer</h3>
+                    <p>Conselhos práticos para uma carreira sólida em tecnologia.</p>
+                    <p><strong>Autor:</strong> Andrew Hunt</p>
+                    <p><strong>Editora:</strong> Addison-Wesley</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=105" alt="Livro">
+                <div class="book-info">
+                    <h3>Python Fluente</h3>
+                    <p>Guia avançado para desenvolvimento profissional em Python.</p>
+                    <p><strong>Autor:</strong> Luciano Ramalho</p>
+                    <p><strong>Editora:</strong> Novatec</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=106" alt="Livro">
+                <div class="book-info">
+                    <h3>Arquitetura Limpa</h3>
+                    <p>Princípios essenciais para criar sistemas duradouros.</p>
+                    <p><strong>Autor:</strong> Robert C. Martin</p>
+                    <p><strong>Editora:</strong> Alta Books</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=107" alt="Livro">
+                <div class="book-info">
+                    <h3>Java Efetivo</h3>
+                    <p>Boas práticas para desenvolver aplicações Java modernas.</p>
+                    <p><strong>Autor:</strong> Joshua Bloch</p>
+                    <p><strong>Editora:</strong> Bookman</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=108" alt="Livro">
+                <div class="book-info">
+                    <h3>Docker Deep Dive</h3>
+                    <p>Containers e DevOps explicados de forma prática.</p>
+                    <p><strong>Autor:</strong> Nigel Poulton</p>
+                    <p><strong>Editora:</strong> Leanpub</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=109" alt="Livro">
+                <div class="book-info">
+                    <h3>Learning React</h3>
+                    <p>Aprenda React utilizando projetos e exemplos atuais.</p>
+                    <p><strong>Autor:</strong> Alex Banks</p>
+                    <p><strong>Editora:</strong> O'Reilly</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img src="https://picsum.photos/400/600?random=110" alt="Livro">
+                <div class="book-info">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Introdução aos fundamentos modernos da Inteligência Artificial.</p>
+                    <p><strong>Autor:</strong> Stuart Russell</p>
+                    <p><strong>Editora:</strong> Pearson</p>
+                    <a href="#" class="book-btn">Saiba mais...</a>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+</main>
+
+
+</body>
+</html>

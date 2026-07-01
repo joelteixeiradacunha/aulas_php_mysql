@@ -1,0 +1,593 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Roboto',sans-serif;
+    font-size:16px;
+    font-weight:300;
+    background:#F9F5FC;
+    margin: 0 10%;
+    color:#333;
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+
+    background:#AA3939;
+
+    color:#FFF;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.top-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+header h1{
+
+    font-family:Verdana;
+
+    font-size:28px;
+
+    color:#FFF;
+
+}
+
+.social{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.social a{
+
+    color:#FFF;
+
+    font-size:24px;
+
+    transition:.3s;
+
+}
+
+.social a:hover{
+
+    transform:scale(1.2);
+
+}
+
+nav{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    color:#FFF;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+}
+
+nav a:hover{
+
+    color:#FFD700;
+
+}
+
+/* ===========================
+CAROUSEL
+=========================== */
+
+.carousel{
+
+    width:100%;
+
+    height:300px;
+
+    overflow:hidden;
+
+    margin-top:40px;
+
+    border-radius:10px;
+
+    position:relative;
+
+}
+
+.slides{
+
+    width:100%;
+
+    height:100%;
+
+    position:relative;
+
+}
+
+.slide{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+}
+
+.slide.active{
+
+    opacity:1;
+
+}
+
+.slide img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+}
+
+.caption{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:20px;
+
+    background:rgba(0,0,0,.55);
+
+    color:#FFF;
+
+    padding:15px;
+
+    border-radius:6px;
+
+}
+
+/* ===========================
+SECTIONS
+=========================== */
+
+section{
+
+    margin-top:60px;
+
+}
+
+section h2{
+
+    margin-bottom:30px;
+
+    font-size:32px;
+
+    color:#AA3939;
+
+}
+
+/* ===========================
+BOOK CARDS
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:30px;
+
+}
+
+.book-card{
+
+    background:#FFF;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.book-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.book-card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+.book-card h3{
+
+    padding:15px;
+
+}
+
+.book-card p{
+
+    padding:0 15px 10px;
+
+    line-height:1.5;
+
+}
+
+.book-card a{
+
+    display:block;
+
+    text-align:center;
+
+    background:#AA3939;
+
+    color:#FFF;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    transition:.3s;
+
+}
+
+.book-card a:hover{
+
+    background:#8a2626;
+
+}
+
+/* ===========================
+NOTÍCIAS
+=========================== */
+
+.news-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+
+    gap:25px;
+
+}
+
+.news-card{
+
+    display:flex;
+
+    background:#FFF;
+
+    height:200px;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+}
+
+.news-card img{
+
+    width:180px;
+
+    object-fit:cover;
+
+}
+
+.news-card div{
+
+    padding:18px;
+
+}
+
+.news-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.news-card p{
+
+    line-height:1.5;
+
+}
+
+.news-card span{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+.news-card a{
+
+    color:#AA3939;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+/* ===========================
+TOP BOOKS
+=========================== */
+
+.top-books{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:30px;
+
+}
+
+.top-card{
+
+    background:#FFF;
+
+    padding:15px;
+
+    transition:.35s;
+
+}
+
+.top-card:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:12px 12px 25px rgba(0,0,0,.28);
+
+}
+
+.top-card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    margin-bottom:15px;
+
+}
+
+.top-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.top-card p{
+
+    margin-bottom:8px;
+
+    line-height:1.5;
+
+}
+
+.top-card button{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border-radius:6px;
+
+    background:#0A2AFF;
+
+    color:#FFCC22;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.top-card button:hover{
+
+    background:#001db3;
+
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+
+    margin-top:80px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:#AA3939;
+
+    color:#FFF;
+
+}
+
+/* ===========================
+RESPONSIVO
+=========================== */
+
+@media(max-width:1024px){
+
+    body{
+
+        margin-left:5%;
+
+        margin-right:5%;
+
+    }
+
+    .news-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .top-header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    nav{
+
+        justify-content:center;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .news-card{
+
+        flex-direction:column;
+
+        height:auto;
+
+    }
+
+    .news-card img{
+
+        width:100%;
+
+        height:220px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    }
+
+    .top-books{
+
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    header h1{
+
+        font-size:22px;
+
+        text-align:center;
+
+    }
+
+    section h2{
+
+        font-size:26px;
+
+    }
+
+    .carousel{
+
+        height:220px;
+
+    }
+
+    .slide img{
+
+        height:220px;
+
+    }
+
+    .caption{
+
+        font-size:14px;
+
+    }
+
+}

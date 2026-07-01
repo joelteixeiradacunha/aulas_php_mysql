@@ -1,0 +1,328 @@
+
+    /* --- ESTILOS GERAIS E BODY --- */
+body {
+    margin: 0 10%;
+    background-color: #F9F5FC;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #333;
+}
+
+/* --- HEADER --- */
+header {
+    width: 100%;
+    background-color: #AA3939;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    min-height: 140px;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 30px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: Verdana, sans-serif;
+    font-size: 28px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #FFFFFF;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFCC22;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* --- SESSÕES GERAIS --- */
+section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 24px;
+    border-bottom: 2px solid #AA3939;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #AA3939;
+}
+
+/* --- CARROSSEL --- */
+.carousel-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Transição suave */
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.slide-info p {
+    margin: 5px 0;
+}
+
+/* --- LANÇAMENTOS --- */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-lancamento {
+    width: 200px;
+    height: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card-lancamento img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    color: #AA3939;
+}
+
+.card-content p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.rating {
+    color: #FFCC22;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    margin-top: auto;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.card-footer a {
+    color: #AA3939;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* --- NOTÍCIAS --- */
+.noticias-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card-noticia {
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card-noticia img {
+    width: 180px;
+    max-width: 180px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.noticia-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.noticia-content h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.noticia-content p {
+    font-size: 13px;
+    margin: 0 0 10px 0;
+    flex-grow: 1;
+}
+
+.noticia-date {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.noticia-content a {
+    color: #0A2AFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* --- TOP 10 BOOKS --- */
+.top10-card {
+    width: 200px;
+    height: auto;
+    background: #fff;
+    border: none; /* Sem bordas conforme solicitado */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 15px;
+}
+
+/* Efeito Hover do Top 10 */
+.top10-card:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2); /* Sombra do lado direito e embaixo */
+}
+
+.top10-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.top10-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.top10-content h3 {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+.top10-content p {
+    font-size: 13px;
+    margin: 0 0 5px 0;
+}
+
+.author-pub {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-saibamais {
+    background-color: #0A2AFF;
+    color: #FFCC22;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: auto;
+    transition: opacity 0.3s;
+}
+
+.btn-saibamais:hover {
+    opacity: 0.8;
+}
+
+/* Responsividade Básica */
+@media (max-width: 900px) {
+    .noticias-container { justify-content: center; }
+    .card-noticia { width: 100%; max-width: 500px; }
+    body { margin: 0 5%; }
+}

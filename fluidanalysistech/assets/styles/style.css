@@ -1,0 +1,285 @@
+/* Importação da fonte Open Sans Condensed */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700;900&display=swap');
+
+/* Configuração do Body com margens de 5% nas laterais */
+body {
+    margin: 0 5%;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Configuração do Header */
+header {
+    width: 100%;
+    height: 200px;
+    background-color: #fafaf5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* Logotipo comum para Header e Footer */
+.logo {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 48px;
+    color: #000000;
+    margin: 0;
+    text-transform: lowercase;
+    font-weight: 300;
+}
+
+.logo span {
+    color: #fa7f0c;
+    font-weight: 900;
+}
+
+/* Menu de Navegação do Header no lado direito */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fa7f0c;
+}
+
+/* Configuração do Main e do Carrossel */
+main {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 10px; /* Margem de 10px abaixo do carrossel */
+}
+
+.carousel-track {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nome do carro sobreposto na imagem */
+.car-name {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 24px;
+    font-weight: bold;
+    border-left: 5px solid #fa7f0c;
+    border-radius: 0 4px 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Seção: Fique por dentro */
+.news-section {
+    width: 100%;
+    padding: 20px 0 40px 0;
+}
+
+.news-section h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #fa7f0c;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Container dos Cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Estilização dos Cards */
+.news-card {
+    width: 200px;
+    background-color: #fafaf5;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    color: #000000;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.card-content p {
+    font-size: 13px;
+    color: #555555;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.card-content a {
+    color: #fa7f0c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.card-content a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* Configuração do Novo Footer */
+footer {
+    width: 100%;
+    background-color: #fafaf5;
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Coluna Esquerda do Footer (Logo + Redes Sociais) */
+.footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+    padding-left: 5px;
+}
+
+.social-icons a {
+    color: #000000;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #fa7f0c;
+    transform: scale(1.1);
+}
+
+.social-icons svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+}
+
+/* Coluna Central do Footer (Menu Vertical Centralizado) */
+.footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a:hover {
+    color: #fa7f0c;
+}
+
+/* Coluna Direita Invisível para equilibrar o Flexbox e manter o centro perfeito */
+.footer-right {
+    flex: 1;
+}
+
+/* Responsividade básica para o Footer em telas menores */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-left {
+        align-items: center;
+    }
+    .footer-right {
+        display: none;
+    }
+}
