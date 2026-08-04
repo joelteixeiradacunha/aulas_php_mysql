@@ -7,7 +7,7 @@
     <title>Aula REGEX</title>
 </head>
 <body>
-<form action="form_resposta.php" method="get">
+<form action="form_resposta_regex.php" method="post">
 
     Nome: <input type="text" name="nome"><br><br>
     E-mail: <input type="text" name="email"><br><br>

@@ -1,9 +1,9 @@
 <?php
-    @$nome = $_POST["nome"];
-    @$email = $_POST["email"];
-    @$telefone = $_POST["telefone"];
-    @$url = $_POST["url"];
-    @$genero = $_POST["genero"];
+    @$nome = $_REQUEST["nome"];
+    @$email = $_REQUEST["email"];
+    @$telefone = $_REQUEST["telefone"];
+    @$url = $_REQUEST["url"];
+    @$genero = $_REQUEST["genero"];
 
     @$valNome = "";
     @$valEmail = "";
