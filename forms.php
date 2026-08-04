@@ -30,7 +30,7 @@
 // VALIDAÇÃO DE FORMULÁRIOS
 //  TENHA SEMPRE EM MENTE A SEGURANÇA NO PROCESSAMENTO DE FORMULÁRIOS
 
-$name = $email = $gender = $comment = $website = "";
+$name = $email = $gender = $comment = $website = $phone = "";
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -99,11 +99,14 @@ function test_input($data) {
         E-mail: <input type="text" name="email" value="<?php echo $email; ?>"><br>
         <span class="error">* <?php echo $emailErr;?></span>
         <br><br>
+        Telefone: <input type="text" name="phone" value="<?php echo $phone; ?>">
+        <br><br>
         Website: <input type="text" name="website" value="<?php echo $website; ?>"><br>
         <span class="error"><?php echo $websiteErr;?></span>
         <br><br>
         Comment: <textarea name="comment" rows="5" cols="40" value="<?php echo $comment; ?>"></textarea><br>
-
+        <br><br>
+        Gênero:
         <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Feminino
         <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Masculino
         <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Outro

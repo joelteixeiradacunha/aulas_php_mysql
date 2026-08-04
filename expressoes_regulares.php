@@ -6,7 +6,7 @@
 //  Exemplo
 //  $exp = "/Maria Luiza/i";
 //
-//  Maria Luiza é o padrão a ser pesquisado e o i é o modificador
+//  Maria Luiza é o padrão a ser pesquisado e o 'i' é o modificador
 //  que torna a pesquisa case-insensitive
 
 $txt = "E.E. Maria Luiza Miranda Bastos";
