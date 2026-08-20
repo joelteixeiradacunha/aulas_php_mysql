@@ -11,7 +11,7 @@
 
 <h3>Métodos Get e Post</h3>
 
-<form action="form_welcome.php" method="get">
+<form action="form_welcome.php" method="post">
     Nome: <input type="text" name="nome"><br>
     E-mail: <input type="text" name="email"><br>
     <input type="submit" value="Enviar">

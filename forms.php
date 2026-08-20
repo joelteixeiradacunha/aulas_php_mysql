@@ -32,14 +32,15 @@
 
 $name = $email = $gender = $comment = $website = $phone = "";
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
+$validaNome = "/^[a-zA-Z ]*$/";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
         $nameErr = "Name is required";
     } else {
-        $name = test_input($_POST["name"]);
+        $name = verificar_entrada($_POST["name"]);
 //        verifica se o nome contém apenas letras e espaços em branco
-        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+        if (!preg_match($validaNome,$name)) {
             $nameErr = "Permitido apenas letras e espaço em branco";
         }
     }
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
     } else {
-        $email = test_input($_POST["email"]);
+        $email = verificar_entrada($_POST["email"]);
 //        Verifica se o endereço de e-mail ´bem formado
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Formato de e-mail inválido";
@@ -57,29 +58,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["website"])) {
         $website = "";
     } else {
-        $website = test_input($_POST["website"]);
+        $website = verificar_entrada($_POST["website"]);
 //        Vwrifica se a sintaxe da URL é válida
-        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website));
-        $websiteErr = "URL inválida.";
+        if (!filter_var($website, FILTER_VALIDATE_URL)) {
+            $websiteErr = "URL inválida.";
+        };
+
     }
 
     if (empty($_POST["comment"])) {
         $comment = "";
     } else {
-        $comment = test_input($_POST["comment"]);
+        $comment = verificar_entrada($_POST["comment"]);
     }
 
     if (empty($_POST["gender"])) {
         $genderErr = "Gender is required";
     } else {
-        $gender = test_input($_POST["gender"]);
+        $gender = verificar_entrada($_POST["gender"]);
     }
 }
 
-function test_input($data) {
+function verificar_entrada($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
+    $data = strtoupper($data);
     return $data;
 }
 ?>
@@ -101,7 +105,8 @@ function test_input($data) {
         <br><br>
         Telefone: <input type="text" name="phone" value="<?php echo $phone; ?>">
         <br><br>
-        Website: <input type="text" name="website" value="<?php echo $website; ?>"><br>
+        Website: <input type="text" name="website" value="<?php echo $website; ?>" placeholder="Exemplo: https://www.exemplo.com.br"><br>
+        <span style="color: lightgrey"><small>Exemplo: https://www.exemplo.com.br</small></span>
         <span class="error"><?php echo $websiteErr;?></span>
         <br><br>
         Comment: <textarea name="comment" rows="5" cols="40" value="<?php echo $comment; ?>"></textarea><br>

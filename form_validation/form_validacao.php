@@ -18,13 +18,13 @@
     </dt>
     <dt>E-mail:
         <dd>Obrigatório</dd>
-        <dd>Deve conter uma e-mail válido (com @ e ponto)</dd>
+        <dd>Deve conter um e-mail válido (com @ e ponto)</dd>
     </dt>
     <dt>Website:
         <dd>Opcional</dd>
         <dd>Se presente, deve conter uma URL válida</dd>
     </dt>
-    <dt>Gênero:
+    <dt>Comentário:
         <dd>Opcional</dd>
         <dd>Campo de entrada multi linhas.</dd>
     </dt>
@@ -43,8 +43,10 @@ $nameError = $emailError = $genderError = $websiteError = "";
 // Se não tiverem, imprime na tela uma mensagem de erro.
 // Se tiver preenchido, continua a verificação.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//    Empty -> Verifica se o campo está vazio
     if (empty($_POST["name"])) {
-        $nameError = "O nome é obrigatório.";
+        $nameError = "O campo nome é obrigatório.";
+//    Se não estiver vazio, verifica outros detalhes com a função verificar_entrada
     }else{
         $name = verificar_entrada($_POST["name"]);
     }
@@ -68,6 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         $gender = verificar_entrada($_POST["gender"]);
     }
+}else{
+    echo "Alterar o método do forms para post";
 }
 
 // Retira espaços em branco, contra barras e caracteres especiais
@@ -88,10 +92,10 @@ function verificar_entrada($entrada)
     <br>
     Name: <input type="text" name="name">
     <span style = "color: red">* <?php echo $nameError;?></span><br>
-    E-mail: <input type="text" name="email">
+    E-mail: <input type="email" name="email">
     <span style = "color: red">* <?php echo $emailError;?></span><br>
     Website: <input type="text" name="website"><br>
-    Comment: <textarea name="comment" rows="5" cols="40"></textarea><br>
+    Comentário: <textarea name="comment" rows="5" cols="40"></textarea><br>
     Gender:
     <input type="radio" name="gender" value="female">Feminino
     <input type="radio" name="gender" value="male">Masculino

@@ -11,9 +11,9 @@
 <p>No método POST elas são suprimidas.</p>
 
 
-Bem-vindo Sr. Dr. <?php echo "<b>" . $_GET["nome"] ."</b>";?><br>
+Bem-vindo Sr. Dr. <?php echo "<b>" . $_POST["nome"] ."</b>";?><br>
 
-Seu e-mail cadastrado foi: <?php echo "<b>" . $_GET["email"] ."</b>";?><br>
+Seu e-mail cadastrado foi: <?php echo "<b>" . $_POST["email"] ."</b>";?><br>
 
 </body>
 </html>
