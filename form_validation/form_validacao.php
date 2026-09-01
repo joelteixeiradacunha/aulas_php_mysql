@@ -1,4 +1,57 @@
 <?php
+// Variáveis para mensagem de erro e dados do formulário
+$name = $email = $gender = $comment = $website = "";
+$nameError = $emailError = $genderError = $websiteError = "";
+
+// Condicional para avaliar se os campos estão preenchidos.
+// Se não tiverem, imprime na tela uma mensagem de erro.
+// Se tiver preenchido, continua a verificação.
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//    Empty -> Verifica se o campo está vazio
+    if (empty($_POST["name"])) {
+        $nameError = "O campo nome é obrigatório.";
+//    Se não estiver vazio, verifica outros detalhes com a função verificar_entrada
+    } else {
+        $name = verificar_entrada($_POST["name"]);
+    }
+    if (empty($_POST["email"])) {
+        $emailError = "O e-mail é obrigatório.";
+    } else {
+        $email = verificar_entrada($_POST["email"]);
+    }
+    if (empty($_POST["website"])) {
+        $website = "";
+    } else {
+        $website = verificar_entrada($_POST["website"]);
+    }
+    if (empty($_POST["comment"])) {
+        $comment = "";
+    } else {
+        $comment = verificar_entrada($_POST["comment"]);
+    }
+    if (empty($_POST["gender"])) {
+        $genderError = "O gênero é obrigatório.";
+    } else {
+        $gender = verificar_entrada($_POST["gender"]);
+
+    }
+
+    }
+    else{
+        echo "Alterar o método do forms para post";
+    }
+
+// Retira espaços em branco, contra barras e caracteres especiais
+function verificar_entrada($entrada)
+{
+$entrada = trim($entrada);
+$entrada = stripslashes($entrada);
+$entrada = htmlspecialchars($entrada);
+$entrada = strtoupper($entrada);
+return $entrada;
+}
+
+
 
 ?>
 <!DOCTYPE html>
@@ -34,56 +87,6 @@
     </dt>
 </dl>
 
-<?php
-// Variáveis para mensagem de erro e dados do formulário
-$name = $email = $gender = $comment = $website = "";
-$nameError = $emailError = $genderError = $websiteError = "";
-
-// Condicional para avaliar se os campos estão preenchidos.
-// Se não tiverem, imprime na tela uma mensagem de erro.
-// Se tiver preenchido, continua a verificação.
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//    Empty -> Verifica se o campo está vazio
-    if (empty($_POST["name"])) {
-        $nameError = "O campo nome é obrigatório.";
-//    Se não estiver vazio, verifica outros detalhes com a função verificar_entrada
-    }else{
-        $name = verificar_entrada($_POST["name"]);
-    }
-    if (empty($_POST["email"])) {
-        $emailError = "O e-mail é obrigatório.";
-    }else{
-        $email = verificar_entrada($_POST["email"]);
-    }
-    if (empty($_POST["website"])){
-        $website = "";
-    }else{
-        $website = verificar_entrada($_POST["website"]);
-    }
-    if (empty($_POST["comment"])){
-        $comment = "";
-    }else{
-        $comment = verificar_entrada($_POST["comment"]);
-    }
-    if (empty($_POST["gender"])){
-        $genderError = "O gênero é obrigatório.";
-    }else{
-        $gender = verificar_entrada($_POST["gender"]);
-    }
-}else{
-    echo "Alterar o método do forms para post";
-}
-
-// Retira espaços em branco, contra barras e caracteres especiais
-function verificar_entrada($entrada)
-{
-    $entrada = trim($entrada);
-    $entrada = stripslashes($entrada);
-    $entrada = htmlspecialchars($entrada);
-    $entrada = strtoupper($entrada);
-    return $entrada;
-}
-?>
 
 <h3>Formulário a ser verificado</h3>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
@@ -106,12 +109,18 @@ function verificar_entrada($entrada)
 </form>
 <br><br>
 <?php
+
 echo "Dados digitados: <br>";
 echo $name . "<br>";
 echo $email . "<br>";
 echo $website . "<br>";
 echo $comment . "<br>";
 echo $gender . "<br>";
+
+if (isset($name, $email, $website, $comment, $gender, $genderError)) {
+
+}
+
 
 ?>
 </body>
