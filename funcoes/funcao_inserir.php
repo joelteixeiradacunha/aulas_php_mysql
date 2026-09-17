@@ -1,6 +1,6 @@
 <?php
-include ("includes/_conexao.php");
-include ("includes/fecha_conexao.php");
+include("includes/_conexao.php");
+include("includes/fecha_conexao.php");
 
     function inserir ($coluna, $valor, $tabela){
         if ((is_array($coluna)) and (is_array($valor))) {
