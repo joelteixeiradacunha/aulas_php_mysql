@@ -6,7 +6,7 @@ include "../includes/fecha_conexao.php";
 function select($tabela, $coluna="*", $where = NULL, $ordem=NULL, $limit=NULL)
 {
 //    $SQL da consulta
-    $sql="SELECT {$coluna} FROM {$tabela} {$where} {$ordem} {$limit}) ";
+    $sql="SELECT {$coluna} FROM {$tabela} {$where} {$ordem} {$limit})";
 
     if ($conexao = conectar())
     {
@@ -32,3 +32,5 @@ function select($tabela, $coluna="*", $where = NULL, $ordem=NULL, $limit=NULL)
         return false;
     }
 }
+
+select("questoes");
