@@ -1,6 +1,6 @@
 <?php
 
-    function conectar ($banco = "escola", $usuario = "root", $senha="", $hostname="localhost") {
+    function conectar ($banco = "questoes", $usuario = "root", $senha="", $hostname="localhost") {
         $connect = mysqli_connect($hostname, $usuario, $senha, $banco);
         if (!$connect) {
             die(trigger_error("Não foi possível estabelecer conexão com o banco de dados"));

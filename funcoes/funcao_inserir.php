@@ -1,11 +1,11 @@
 <?php
-include("includes/_conexao.php");
-include("includes/fecha_conexao.php");
+include "../includes/conexao.php";
+include "../includes/fecha_conexao.php";
 
     function inserir ($coluna, $valor, $tabela){
         if ((is_array($coluna)) and (is_array($valor))) {
             if (count($coluna) == count($valor)){
-                $inserir = "INSERT INTO {$tabela} (".implode(', ', $coluna).") VALUES ('".implode('\', \'',$valor)."')";
+                $inserir = "INSERT INTO {$tabela} (".implode(', ', $coluna).") VALUE ('".implode('\', \'',$valor)."')";
 
             }else {
                 return false;

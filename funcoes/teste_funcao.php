@@ -1,17 +1,16 @@
 <?php
 include "funcao_select.php";
 
-$consulta = select("cadastro_aluno");
+$consulta = select("questoes");
 
 if ($consulta == true) {
-
-    foreach ($consulta as $linha) {
-        echo $consulta["nome"];
-        echo $consulta["email"];
-
-
+    $i = 0;
+    while ($i <= count($consulta)) {
+        $referencia = array($consulta['referencia']);
+        $referenciaUnica = array_values(array_unique($referencia));
+        $i++;
     }
-
+    var_dump($referenciaUnica);
     }else {
     echo "Nenhum registro encontrado";
 }
