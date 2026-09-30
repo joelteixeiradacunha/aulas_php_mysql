@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e52e7b8d-5385-4f16-81ed-11d15dd3d1a7" name="Changes" comment="aula 29abr Forms" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <execution>
+        <execution>
+          <execution>
+            <execution>
+              <execution>
+                <execution>
+                  <execution>
+                    <execution>
+                      <execution>
+                        <execution>
+                          <execution>
+                            <execution>
+                              <execution>
+                                <execution>
+                                  <execution>
+                                    <execution>
+                                      <execution>
+                                        <execution>
+                                          <execution>
+                                            <execution>
+                                              <execution>
+                                                <execution />
+                                              </execution>
+                                            </execution>
+                                          </execution>
+                                        </execution>
+                                      </execution>
+                                    </execution>
+                                  </execution>
+                                </execution>
+                              </execution>
+                            </execution>
+                          </execution>
+                        </execution>
+                      </execution>
+                    </execution>
+                  </execution>
+                </execution>
+              </execution>
+            </execution>
+          </execution>
+        </execution>
+      </execution>
+    </execution>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="107" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="PHP File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;joeltcunha&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/joelteixeiradacunha/aulas_php_mysql.git&quot;,
+    &quot;accountId&quot;: &quot;0dca39b1-2467-4165-8e5f-ccde122d2735&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000014924064231" />
+      <entry key="S2" value="1.0621922720961627" />
+      <entry key="S5" value="1.3464525418187485" />
+      <entry key="S10" value="1.7207346184944734" />
+      <entry key="S30" value="2.6770062668549315" />
+      <entry key="S60" value="3.8342161698713926" />
+      <entry key="M2" value="6.431003849927782" />
+      <entry key="M5" value="17.068166198625118" />
+      <entry key="M10" value="32.75129772574152" />
+      <entry key="M15" value="43.849122931715705" />
+      <entry key="M30" value="62.98277122793074" />
+      <entry key="H1" value="81.74890649464291" />
+      <entry key="H2" value="108.46631469028051" />
+      <entry key="H4" value="166.24585481979713" />
+      <entry key="D1" value="567.781020232138" />
+      <entry key="W1" value="892.7052349484464" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.5997961282527872E-85" />
+      <entry key="S2" value="6.324353842249466E-22" />
+      <entry key="S5" value="3.3144117821974934E-9" />
+      <entry key="S10" value="5.757092890907202E-5" />
+      <entry key="S30" value="0.03875473810651835" />
+      <entry key="S60" value="0.21777353512307454" />
+      <entry key="M2" value="0.8059106592943861" />
+      <entry key="M5" value="3.735568635971409" />
+      <entry key="M10" value="8.499284966404586" />
+      <entry key="M15" value="11.986053313170187" />
+      <entry key="M30" value="17.85906535882258" />
+      <entry key="H1" value="23.93349750721065" />
+      <entry key="H2" value="34.512912189856145" />
+      <entry key="H4" value="52.55705054509078" />
+      <entry key="D1" value="127.83608270205382" />
+      <entry key="W1" value="181.1986237382919" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9201876506248751" />
+      <entry key="MS500" value="0.9835164897220643" />
+      <entry key="S2" value="1.0574891249134755" />
+      <entry key="S5" value="1.340002165756394" />
+      <entry key="S10" value="1.7006351091245862" />
+      <entry key="S30" value="2.6708397445928087" />
+      <entry key="S60" value="4.00696851704901" />
+      <entry key="M2" value="7.197285885083656" />
+      <entry key="M5" value="20.7650366500547" />
+      <entry key="M10" value="41.21142816426176" />
+      <entry key="M15" value="55.79832573308124" />
+      <entry key="M30" value="80.81329388762381" />
+      <entry key="H1" value="105.66208599181006" />
+      <entry key="H2" value="142.96346255307503" />
+      <entry key="H4" value="218.79011182565404" />
+      <entry key="D1" value="695.6111847927924" />
+      <entry key="W1" value="1073.902571249379" />
+    </decayedShown>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3A7Rgh99dgwe7i1nK1TSkdjiMiN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.teste-Davi.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "PHP Script._conexao.php.executor": "Run",
+    "PHP Script.conexao.php.executor": "Run",
+    "PHP Script.funcao_inserir.php.executor": "Run",
+    "PHP Script.funcao_select.php.executor": "Run",
+    "PHP Script.index.php.executor": "Run",
+    "PHP Script.strings.php.executor": "Run",
+    "PHP Script.teste_inserir.php.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/jtcun/OneDrive/Documentos/GitHub/aulas_php_mysql",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jtcun\OneDrive\Documentos\GitHub\aulas_php_mysql" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jtcun\OneDrive\Documentos\GitHub\aulas_php_mysql\funcoes" />
+      <recent name="C:\Users\jtcun\OneDrive\Documentos\GitHub\aulas_php_mysql" />
+      <recent name="C:\Users\jtcun\OneDrive\Documentos\GitHub\aulas_php_mysql\Carlos_Goes" />
+      <recent name="C:\Users\jtcun\OneDrive\Documentos\GitHub\aulas_php_mysql\fluidanalysistech\assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="teste-Davi.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/arrays.php/teste-Davi.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.teste-Davi.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PS-262.10968.76" />
+        <option value="bundled-php-predefined-a98d8de5180a-9522f28f0b20-com.jetbrains.php.sharedIndexes-PS-262.10968.76" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="PHP" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e52e7b8d-5385-4f16-81ed-11d15dd3d1a7" name="Changes" comment="" />
+      <created>1771941734474</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771941734474</updated>
+      <workItem from="1771941735597" duration="5918000" />
+      <workItem from="1772113683178" duration="80000" />
+      <workItem from="1772459283297" duration="261000" />
+      <workItem from="1772459967991" duration="2369000" />
+      <workItem from="1772462361491" duration="2336000" />
+      <workItem from="1772715399562" duration="1694000" />
+      <workItem from="1772758967563" duration="38000" />
+      <workItem from="1773012275419" duration="1291000" />
+      <workItem from="1773013655362" duration="50000" />
+      <workItem from="1773057246089" duration="996000" />
+      <workItem from="1773058570592" duration="10000" />
+      <workItem from="1773058659285" duration="6730000" />
+      <workItem from="1773656335770" duration="8281000" />
+      <workItem from="1773931739355" duration="6005000" />
+      <workItem from="1774261230318" duration="7010000" />
+      <workItem from="1774545278225" duration="1598000" />
+      <workItem from="1774551252556" duration="272000" />
+      <workItem from="1774551658133" duration="2117000" />
+      <workItem from="1774562989055" duration="3506000" />
+      <workItem from="1774607132300" duration="7948000" />
+      <workItem from="1774637813632" duration="1855000" />
+      <workItem from="1774865720112" duration="42000" />
+      <workItem from="1774865841269" duration="322000" />
+      <workItem from="1774866208151" duration="4319000" />
+      <workItem from="1775038921619" duration="8507000" />
+      <workItem from="1775485349708" duration="3287000" />
+      <workItem from="1775503645159" duration="1002000" />
+      <workItem from="1775506205983" duration="2118000" />
+      <workItem from="1776030752171" duration="5897000" />
+      <workItem from="1776260954251" duration="4478000" />
+      <workItem from="1777294834111" duration="3046000" />
+      <workItem from="1777371063616" duration="611000" />
+      <workItem from="1777464694173" duration="601000" />
+      <workItem from="1777465389834" duration="3489000" />
+      <workItem from="1777545075716" duration="2393000" />
+      <workItem from="1777554751397" duration="5383000" />
+      <workItem from="1778149913597" duration="20026000" />
+      <workItem from="1778240812152" duration="634000" />
+      <workItem from="1779053929111" duration="7269000" />
+      <workItem from="1779098850946" duration="8554000" />
+      <workItem from="1779463093178" duration="6063000" />
+      <workItem from="1779703700608" duration="10874000" />
+      <workItem from="1779893099004" duration="1229000" />
+      <workItem from="1780268949780" duration="2304000" />
+      <workItem from="1780308363890" duration="11818000" />
+      <workItem from="1780491527735" duration="1226000" />
+      <workItem from="1780871233959" duration="2094000" />
+      <workItem from="1780874756295" duration="92000" />
+      <workItem from="1780913508340" duration="6021000" />
+      <workItem from="1781453347804" duration="2046000" />
+      <workItem from="1781518730901" duration="6640000" />
+      <workItem from="1782126366418" duration="5771000" />
+      <workItem from="1782224269676" duration="230000" />
+      <workItem from="1782308824849" duration="7022000" />
+      <workItem from="1782409282741" duration="21463000" />
+      <workItem from="1782501495459" duration="627000" />
+      <workItem from="1782732261816" duration="11790000" />
+      <workItem from="1782901806979" duration="2150000" />
+      <workItem from="1782911131644" duration="10036000" />
+      <workItem from="1782986934264" duration="927000" />
+      <workItem from="1783081905956" duration="7108000" />
+      <workItem from="1783332609678" duration="8646000" />
+      <workItem from="1783419323201" duration="1658000" />
+      <workItem from="1785752853016" duration="1303000" />
+      <workItem from="1785860987550" duration="2480000" />
+      <workItem from="1785878925426" duration="918000" />
+      <workItem from="1785929889916" duration="896000" />
+      <workItem from="1785931564582" duration="9483000" />
+      <workItem from="1786103154522" duration="4249000" />
+      <workItem from="1786119081999" duration="229000" />
+      <workItem from="1786119346407" duration="1323000" />
+      <workItem from="1786121932867" duration="3442000" />
+      <workItem from="1786129037200" duration="1172000" />
+      <workItem from="1786284049423" duration="9246000" />
+      <workItem from="1786359434976" duration="10932000" />
+      <workItem from="1786719587499" duration="175000" />
+      <workItem from="1786964303889" duration="8957000" />
+      <workItem from="1787232839830" duration="3435000" />
+      <workItem from="1787310059569" duration="1501000" />
+      <workItem from="1789478682686" duration="1953000" />
+      <workItem from="1789480724439" duration="351000" />
+      <workItem from="1789481162540" duration="1994000" />
+      <workItem from="1789483309461" duration="9470000" />
+      <workItem from="1789596751402" duration="4511000" />
+      <workItem from="1789664226972" duration="457000" />
+      <workItem from="1789664795071" duration="5698000" />
+      <workItem from="1789672268878" duration="452000" />
+      <workItem from="1789820972048" duration="7000" />
+      <workItem from="1789824395780" duration="415000" />
+      <workItem from="1789825591693" duration="3362000" />
+      <workItem from="1789856408487" duration="563000" />
+      <workItem from="1789857024627" duration="73000" />
+      <workItem from="1789940183582" duration="2697000" />
+      <workItem from="1789986583913" duration="5554000" />
+      <workItem from="1790082069577" duration="14417000" />
+      <workItem from="1790163478523" duration="5810000" />
+    </task>
+    <task id="LOCAL-00001" summary="My first commit">
+      <option name="closed" value="true" />
+      <created>1773065850267</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773065850268</updated>
+    </task>
+    <task id="LOCAL-00002" summary="aula 16mar">
+      <option name="closed" value="true" />
+      <created>1773659518093</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773659518093</updated>
+    </task>
+    <task id="LOCAL-00003" summary="aula 16mar_2">
+      <option name="closed" value="true" />
+      <created>1773663365173</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773663365173</updated>
+    </task>
+    <task id="LOCAL-00004" summary="aula 16mar_2 exercícios">
+      <option name="closed" value="true" />
+      <created>1773663664724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773663664724</updated>
+    </task>
+    <task id="LOCAL-00005" summary="aula 16mar_2 exercícios">
+      <option name="closed" value="true" />
+      <created>1773931761312</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773931761312</updated>
+    </task>
+    <task id="LOCAL-00006" summary="aula 23mar Strings">
+      <option name="closed" value="true" />
+      <created>1774268188428</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1774268188428</updated>
+    </task>
+    <task id="LOCAL-00007" summary="aula 23mar Strings">
+      <option name="closed" value="true" />
+      <created>1774268256519</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1774268256519</updated>
+    </task>
+    <task id="LOCAL-00008" summary="aula 26mar Strings - Exercícios">
+      <option name="closed" value="true" />
+      <created>1774545759745</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1774545759745</updated>
+    </task>
+    <task id="LOCAL-00009" summary="aula 26mar Funções">
+      <option name="closed" value="true" />
+      <created>1774553764082</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1774553764082</updated>
+    </task>
+    <task id="LOCAL-00010" summary="aula 26mar Arrays">
+      <option name="closed" value="true" />
+      <created>1774569260231</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1774569260231</updated>
+    </task>
+    <task id="LOCAL-00011" summary="aula 26mar Forms">
+      <option name="closed" value="true" />
+      <created>1774639655385</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1774639655385</updated>
+    </task>
+    <task id="LOCAL-00012" summary="aula 29abr Forms">
+      <option name="closed" value="true" />
+      <created>1777553843830</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1777553843830</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="My first commit" />
+    <MESSAGE value="aula 16mar" />
+    <MESSAGE value="aula 16mar_2" />
+    <MESSAGE value="aula 16mar_2 exercícios" />
+    <MESSAGE value="aula 23mar Strings" />
+    <MESSAGE value="aula 26mar Strings - Exercícios" />
+    <MESSAGE value="aula 26mar Funções" />
+    <MESSAGE value="aula 26mar Arrays" />
+    <MESSAGE value="aula 26mar Forms" />
+    <MESSAGE value="aula 29abr Forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="aula 29abr Forms" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

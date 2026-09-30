@@ -1,8 +1,16 @@
 <?php
 include "../funcoes/funcao_select.php";
 
-$consulta = select('questoes');
-if ($consulta == true) {
+$consulta = select('questoes', ('referencia'));
 
-    echo $consulta['referencia'];
+$materias = "todas";
+
+$disciplinas = array("Geografia", "Inglês", "Espanhol", "Português", "Matemática", "Química");
+
+if ($materias == "todas") {
+    $consulta = select('questoes');
+
+    if ($consulta == true){
+
+    }
 }

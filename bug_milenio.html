@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação Y2K: Defesa do Ano 2000</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #008080;
+            margin: 0;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #1a1a1a;
+        }
+
+        .game-container {
+            width: 100%;
+            max-width: 880px;
+            background-color: #fdfdfd;
+            border-radius: 24px;
+            border: 5px solid #000000;
+            box-shadow: 0px 14px 0px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .header-bar {
+            background-color: #1d3557;
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid #000;
+            font-family: 'Fredoka', cursive;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .pill {
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 900;
+            border: 3px solid #000;
+            box-shadow: 0 4px 0 #000;
+        }
+
+        .pill-target { background-color: #4cc9f0; color: #000; }
+        .pill-score { background-color: #ffcc00; color: #000; }
+
+        .btn-sound {
+            background-color: #ffffff;
+            color: #000;
+            border: 3px solid #000;
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.95rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #000;
+            transition: transform 0.1s;
+        }
+        .btn-sound:active { transform: translateY(2px); box-shadow: 0 2px 0 #000; }
+
+        .content-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .btn-action {
+            font-family: 'Fredoka', cursive;
+            font-size: 1.6rem;
+            padding: 16px 36px;
+            border-radius: 20px;
+            border: 4px solid #000;
+            background-color: #ffcc00;
+            color: #000;
+            cursor: pointer;
+            box-shadow: 0 7px 0 #000;
+            transition: all 0.1s ease;
+            text-align: center;
+            display: inline-block;
+            font-weight: 700;
+        }
+        .btn-action:hover { background-color: #ffe066; }
+        .btn-action:active { transform: translateY(4px); box-shadow: 0 3px 0 #000; }
+
+        .option-btn {
+            background-color: #ffffff;
+            border: 4px solid #000;
+            border-radius: 18px;
+            padding: 18px 24px;
+            font-size: 1.35rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 0 5px 0 #000;
+            transition: all 0.15s;
+            line-height: 1.4;
+            color: #1a1a1a;
+        }
+        .option-btn:hover:not(:disabled) {
+            background-color: #e2f1ff;
+            transform: translateX(6px);
+        }
+        .option-btn:disabled { cursor: default; }
+
+        .option-btn.correct {
+            background-color: #2a9d8f !important;
+            color: #ffffff !important;
+            border-color: #000 !important;
+        }
+        .option-btn.wrong {
+            background-color: #e63946 !important;
+            color: #ffffff !important;
+            border-color: #000 !important;
+        }
+
+        .feedback-box {
+            padding: 24px;
+            border-radius: 20px;
+            border: 4px solid #000;
+            box-shadow: 0 7px 0 #000;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.96); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .feedback-box.correct-bg { background-color: #d1fae5; border-color: #10b981; color: #065f46; }
+        .feedback-box.wrong-bg { background-color: #fee2e2; border-color: #ef4444; color: #991b1b; }
+
+        .progress-bar-bg {
+            background-color: #e2e8f0;
+            border: 4px solid #000;
+            border-radius: 50px;
+            height: 26px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+        }
+        .progress-bar-fill {
+            background-color: #ffcc00;
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .stamp-card {
+            background-color: #ffffff;
+            border: 4px solid #000;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 6px 0 #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #gameCanvas {
+            background-color: #0f172a;
+            border: 4px solid #000;
+            border-radius: 20px;
+            box-shadow: 0 7px 0 #000;
+            width: 100%;
+            height: 340px;
+            touch-action: none;
+            cursor: crosshair;
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+
+    <header class="header-bar">
+        <div class="header-title">
+            <span>💾 OPERAÇÃO Y2K: O BUG DO MILÊNIO</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="pill pill-target">Meta: 1500 pts</span>
+            <span class="pill pill-score">Pontos: <b id="scoreDisplay">0</b> / 2000</span>
+            <button id="soundToggleBtn" onclick="toggleSound()" class="btn-sound">🔊 Som: LIGADO</button>
+        </div>
+    </header>
+
+    <section id="screenMenu" class="content-body text-center items-center py-8">
+        <div class="text-8xl mb-3 animate-bounce">📟 📼 🎆</div>
+        <h1 class="text-4xl md:text-5xl font-black text-blue-950 mb-3 tracking-wide font-['Fredoka']">
+            SALVE O ANO 2000!
+        </h1>
+        <p class="text-2xl text-gray-800 max-w-3xl mb-4 leading-relaxed font-bold">
+            Bem-vindo ao final de 1999! Você foi encarregado pela equipe de TI para atualizar os sistemas operacionais e evitar a pane cibernética global!
+        </p>
+
+        <div class="bg-yellow-100 border-4 border-black rounded-2xl p-6 text-left max-w-2xl text-lg md:text-xl mb-6 shadow-[6px_6px_0px_#000]">
+            <h3 class="font-black text-2xl text-yellow-900 mb-3 flex items-center gap-2 font-['Fredoka']">
+                🎯 REGRAS E PONTUAÇÃO:
+            </h3>
+            <ul class="space-y-3 font-extrabold text-gray-900">
+                <li>• <b>Pontuação Máxima:</b> 2000 Pontos | <b>Média para Vencer:</b> 1500 Pts</li>
+                <li>• <b>Fase 1 (Quiz Histórico):</b> 7 Perguntas com explicações completas! ⏱️ 60 Segundos!</li>
+                <li>• <b>Fase 2 (O Carimbo 2000):</b> Atualize 5 servidores de 99 para 2000! ⏱️ 20 Segundos!</li>
+                <li>• <b>Fase 3 (Defesa Cibernética):</b> Pegue os bugs caidores com seu escudo! ⏱️ 20 Segundos!</li>
+                <li><span class="text-red-700">⚠️ <b>Cuidado:</b> Se o tempo de qualquer fase esgotar, a bomba estoura!</span></li>
+            </ul>
+        </div>
+
+        <button onclick="startGame()" class="btn-action text-3xl px-12 py-6">
+            🚀 COMEÇAR MISSÃO!
+        </button>
+    </section>
+
+    <section id="screenQuiz" class="content-body hidden">
+        <div class="flex justify-between items-center bg-blue-100 border-4 border-black p-4 rounded-2xl">
+            <span class="font-black text-2xl text-blue-900 font-['Fredoka']">ETAPA 1: Quiz Histórico</span>
+            <span id="quizTimerDisplay" class="bg-red-600 text-white font-black px-5 py-2 rounded-full text-2xl border-3 border-black">
+                    ⏱️ 60s
+                </span>
+            <span id="quizCounter" class="bg-blue-600 text-white font-black px-5 py-2 rounded-full text-xl border-3 border-black">
+                    Pergunta 1 de 7
+                </span>
+        </div>
+
+        <div class="progress-bar-bg">
+            <div id="quizProgress" class="progress-bar-fill"></div>
+        </div>
+
+        <div class="bg-gray-100 border-4 border-black p-6 rounded-2xl shadow-[5px_5px_0px_#000]">
+            <h2 id="quizQuestion" class="text-2xl md:text-3xl font-black text-gray-900 leading-snug">
+                Carregando pergunta...
+            </h2>
+        </div>
+
+        <div id="quizOptions" class="flex flex-col gap-4">
+            <!-- Botões gerados via JS -->
+        </div>
+
+        <div id="quizFeedback" class="feedback-box hidden">
+            <div id="quizFeedbackTitle" class="text-2xl font-black font-['Fredoka']">...</div>
+            <p id="quizFeedbackText" class="text-xl font-extrabold leading-relaxed">...</p>
+            <button id="quizNextBtn" onclick="nextQuizQuestion()" class="btn-action text-2xl py-3 px-8 self-end">
+                Próxima Pergunta ➔
+            </button>
+        </div>
+    </section>
+
+    <section id="screenStamp" class="content-body hidden">
+        <div class="flex justify-between items-center bg-purple-100 border-4 border-black p-5 rounded-2xl">
+            <div>
+                <h3 class="font-black text-3xl text-purple-950 font-['Fredoka']">ETAPA 2: O Carimbo 2000</h3>
+                <p class="text-lg text-purple-900 font-extrabold mt-1">Atualize os 5 servidores de <b>1999</b> para <b>2000</b> antes que o tempo acabe!</p>
+            </div>
+            <span id="stampTimerDisplay" class="bg-red-600 text-white font-black px-5 py-2 rounded-full text-2xl border-3 border-black">
+                    ⏱️ 20s
+                </span>
+        </div>
+
+        <div id="stampGrid" class="grid grid-cols-1 md:grid-cols-3 gap-5 my-2">
+            <!-- Cartões dinâmicos via JS -->
+        </div>
+
+        <div id="stampSuccessBox" class="hidden text-center bg-green-100 border-4 border-black p-8 rounded-2xl shadow-[6px_6px_0px_#000]">
+            <h3 class="text-3xl font-black text-green-900 mb-2 font-['Fredoka']">🎉 Todos os sistemas foram atualizados (+350 pts)!</h3>
+            <p class="text-xl font-bold text-green-800 mb-6">A meia-noite se aproxima. Prepare seu escudo para pegar os erros caindo do sistema!</p>
+            <button onclick="goToStage3()" class="btn-action text-2xl">
+                Ir para o Jogo de Defesa ➔
+            </button>
+        </div>
+    </section>
+
+    <section id="screenCatch" class="content-body hidden items-center">
+        <div class="w-full flex justify-between items-center bg-red-100 border-4 border-black p-4 rounded-2xl font-black text-xl">
+            <span class="text-red-900 font-['Fredoka']">ETAPA 3: Defesa Cibernética</span>
+            <span class="text-blue-900">Tempo: <b id="catchTimer" class="text-3xl">20s</b></span>
+            <span class="text-green-900">Bugs Pego: <b id="catchScore" class="text-3xl">0</b></span>
+        </div>
+
+        <div id="canvasContainer" class="w-full relative rounded-2xl overflow-hidden">
+            <canvas id="gameCanvas"></canvas>
+
+            <div id="catchStartOverlay" class="absolute inset-0 bg-black/85 flex flex-col items-center justify-center text-center p-6">
+                <div class="text-7xl mb-3">👾 🛡️</div>
+                <h3 class="text-4xl font-black text-yellow-300 mb-3 font-['Fredoka']">Pegue o Bug do Milênio!</h3>
+                <p class="text-white text-xl max-w-lg mb-8 font-bold leading-relaxed">
+                    Mova o escudo verde usando o <b>Mouse</b>, <b>Toque na Tela</b> ou <b>Setas Esquerda/Direita</b> para impedir que os erros "99" atinjam o chão!
+                </p>
+                <button onclick="startCatchGame()" class="btn-action text-3xl py-5 px-10">
+                    ▶️ INICIAR CESTINHA!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenEnd" class="content-body hidden text-center items-center py-8">
+        <div class="text-8xl mb-3">🎆 🍾 🏆</div>
+        <h2 id="endVictoryTitle" class="text-4xl md:text-5xl font-black text-green-700 mb-3 font-['Fredoka']">
+            VOCÊ SALVOU O MUNDO DO BUG DO MILÊNIO!
+        </h2>
+
+        <div class="bg-green-50 border-4 border-black p-8 rounded-2xl max-w-2xl w-full text-left font-bold shadow-[8px_8px_0px_#000]">
+            <h3 class="text-3xl font-black text-green-900 pb-3 mb-6 border-b-4 border-black font-['Fredoka']">
+                📜 CERTIFICADO DE VITÓRIA Y2K
+            </h3>
+
+            <div class="space-y-4 text-xl font-extrabold text-gray-800 mb-6">
+                <div class="flex justify-between"><span>Fase 1 (Quiz Histórico):</span> <span id="finalQuizScore" class="text-blue-900">0 pts</span></div>
+                <div class="flex justify-between"><span>Fase 2 (O Carimbo):</span> <span id="finalStampScore" class="text-blue-900">0 pts</span></div>
+                <div class="flex justify-between"><span>Fase 3 (Pega-Bugs):</span> <span id="finalCatchScore" class="text-blue-900">0 pts</span></div>
+                <hr class="border-3 border-black">
+                <div class="flex justify-between text-3xl font-black">
+                    <span>PONTUAÇÃO TOTAL:</span>
+                    <span id="finalTotalScore" class="text-green-700">0 / 2000</span>
+                </div>
+                <div class="flex justify-between text-base text-gray-700 font-extrabold">
+                    <span>Meta Média para Aprovação:</span>
+                    <span>1500 PONTOS</span>
+                </div>
+            </div>
+
+            <div id="finalResultMessage" class="bg-green-200 border-3 border-green-800 p-5 rounded-xl text-green-950 font-extrabold text-lg leading-relaxed">
+                🎉 PARABÉNS! Você superou a meta de 1500 pontos. Todos os computadores, caixas eletrônicos, voos e usinas continuaram operando perfeitamente no ano 2000!
+            </div>
+        </div>
+
+        <button onclick="startGame()" class="btn-action text-3xl py-5 px-10 mt-6">
+            🔄 JOGAR NOVAMENTE
+        </button>
+    </section>
+
+    <div id="screenExplosion" class="hidden absolute inset-0 bg-red-950/95 z-50 flex flex-col items-center justify-center text-center p-8 text-white border-8 border-red-600">
+        <div class="text-8xl mb-3 animate-ping">💥</div>
+        <div class="text-7xl mb-4">💣 ⚠️ 📟</div>
+        <h2 class="text-4xl md:text-6xl font-black text-yellow-300 mb-3 font-['Fredoka']">
+            O TEMPO ACABOU!
+        </h2>
+        <h3 class="text-3xl md:text-4xl font-black text-red-400 mb-4">
+            O MUNDO ACABOU NO BUG DO MILÊNIO!
+        </h3>
+        <p class="text-xl md:text-2xl text-gray-200 max-w-2xl mb-8 leading-relaxed font-bold">
+            Você não conseguiu concluir as atualizações a tempo. O relógio bateu meia-noite e os servidores entraram em colapso total!
+        </p>
+        <button onclick="startGame()" class="btn-action bg-yellow-400 text-black text-3xl py-5 px-12 border-4 border-black">
+            🔄 TENTAR NOVAMENTE
+        </button>
+    </div>
+
+</div>
+
+<script>
+    const Sound = {
+        ctx: null,
+        enabled: true,
+
+        init() {
+            if (!this.ctx) {
+                this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        },
+
+        playBeep(freq = 440, duration = 0.1, type = 'sine') {
+            if (!this.enabled) return;
+            this.init();
+            try {
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + duration);
+            } catch (e) {}
+        },
+
+        win() {
+            this.playBeep(523, 0.12);
+            setTimeout(() => this.playBeep(659, 0.12), 110);
+            setTimeout(() => this.playBeep(783, 0.28), 220);
+        },
+
+        fail() {
+            this.playBeep(280, 0.18, 'sawtooth');
+            setTimeout(() => this.playBeep(180, 0.32, 'sawtooth'), 160);
+        },
+
+        explode() {
+            if (!this.enabled) return;
+            this.init();
+            try {
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(20, this.ctx.currentTime + 0.9);
+                gain.gain.setValueAtTime(0.35, this.ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.9);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + 0.9);
+            } catch(e) {}
+        },
+
+        pop() {
+            this.playBeep(750, 0.06);
+        }
+    };
+
+    function toggleSound() {
+        Sound.enabled = !Sound.enabled;
+        document.getElementById('soundToggleBtn').innerText = Sound.enabled ? '🔊 Som: LIGADO' : '🔇 Som: DESLIGADO';
+    }
+
+    let totalScore = 0;
+    let quizScore = 0;
+    let stampScore = 0;
+    let catchScoreVal = 0;
+
+    let quizTimerVal = 60;
+    let quizTimerInterval = null;
+
+    let stampTimerVal = 20;
+    let stampTimerInterval = null;
+
+    let catchTimerVal = 20;
+    let catchTimerInterval = null;
+    let catchAnimFrame = null;
+    let catchGameRunning = false;
+
+    function addPoints(pts) {
+        totalScore += pts;
+        if (totalScore > 2000) totalScore = 2000;
+        document.getElementById('scoreDisplay').innerText = totalScore;
+    }
+
+    function clearAllIntervals() {
+        if (quizTimerInterval) clearInterval(quizTimerInterval);
+        if (stampTimerInterval) clearInterval(stampTimerInterval);
+        if (catchTimerInterval) clearInterval(catchTimerInterval);
+        if (catchAnimFrame) cancelAnimationFrame(catchAnimFrame);
+        catchGameRunning = false;
+    }
+
+    function triggerExplosion() {
+        clearAllIntervals();
+        Sound.explode();
+        document.getElementById('screenExplosion').classList.remove('hidden');
+    }
+
+    function showScreen(id) {
+        Sound.pop();
+        document.getElementById('screenExplosion').classList.add('hidden');
+        ['screenMenu', 'screenQuiz', 'screenStamp', 'screenCatch', 'screenEnd'].forEach(s => {
+            document.getElementById(s).classList.add('hidden');
+        });
+        document.getElementById(id).classList.remove('hidden');
+    }
+
+    function startGame() {
+        clearAllIntervals();
+        totalScore = 0;
+        quizScore = 0;
+        stampScore = 0;
+        catchScoreVal = 0;
+        currentQuizQ = 0;
+        document.getElementById('scoreDisplay').innerText = '0';
+
+        showScreen('screenQuiz');
+        startQuizTimer();
+        loadQuizQuestion(0);
+    }
+
+    const questions = [
+        {
+            q: "1. O que foi e por que ocorreu o Bug do Milênio (Y2K)?",
+            options: [
+                "A) Um vírus de computador criado por hackers para desligar a internet.",
+                "B) O uso de apenas 2 dígitos para gravar o ano (ex: '99'), fazendo o ano '00' parecer 1900.",
+                "C) Um problema nos monitores antigos que iriam queimar na virada do século.",
+                "D) Uma falha na rede de celular que impediria chamadas em 2000."
+            ],
+            correct: 1,
+            explain: "Antigamente, para economizar memória cara nos computadores, os programadores gravavam os anos com apenas 2 dígitos. O ano '00' seria interpretado como 1900 em vez de 2000!"
+        },
+        {
+            q: "2. Por que o ano 2000 causava tanta preocupação mundial?",
+            options: [
+                "A) Porque a energia elétrica no planeta seria desligada para sempre.",
+                "B) Porque os robôs domésticos assumiriam as funções das pessoas.",
+                "C) Porque bancos, hospitais, usinas e voos usavam datas para cálculos essenciais.",
+                "D) Porque todos os computadores seriam substituídos por máquinas de escrever."
+            ],
+            correct: 2,
+            explain: "Sistemas financeiros e de infraestrutura dependiam de datas para calcular juros, escalas de voo e controle de usinas. Um erro nos anos travaria tudo!"
+        },
+        {
+            q: "3. Qual setor poderia ser afetado por problemas relacionados aos computadores?",
+            options: [
+                "A) Bancos.",
+                "B) Hospitais.",
+                "C) Empresas.",
+                "D) Todas as alternativas."
+            ],
+            correct: 3,
+            explain: "Todas as alternativas."
+        },
+        {
+            q: "4. Como os jovens costumavam passar parte do tempo livre nos anos 2000?",
+            options: [
+                "A) Jogando video games.",
+                "B) Conversando com amigos.",
+                "C) Assistindo a televisão .",
+                "D) Todas as alternativas."
+            ],
+            correct: 3,
+            explain: "Todas as alternativas."
+        },
+        {
+            q: "5. Por que o Bug do Milenio gerou preoucupação na sociedade?",
+            options: [
+                "A) Porque havia receio de que sistemas importantes apresentassem erros ",
+                "B) Porque as pessoas não gostavam de computadores",
+                "C) Porque a internet seria proibida ",
+                "D) Porque os celulares seriam destruidos"
+            ],
+            correct: 0,
+            explain: "Porque havia receio de que sistemas importantes apresentassem erros "
+        },
+        {
+            q: "6. Qual meio de entretenimento era muito popular nos anos 2000?",
+            options: [
+                "A) Televisão.",
+                "B) DVDs.",
+                "C) Videogames.",
+                "D) Todas as alternativas."
+            ],
+            correct: 3,
+            explain: "Todas as alternativas."
+        },
+        {
+            q: "7. Qual frase melhor descreve a sociedade nos anos 2000?",
+            options: [
+                "A) Era uma sociedade sem tecnologia ",
+                "B) Foi um periodo de grande expansão da internet e das tecnologias digitais.",
+                "C) As pessoas ja utilizavam smartphones modernos como hoje.",
+                "D) Nao havia computadores nas casas."
+            ],
+            correct: 1,
+            explain: "Foi um periodo de grande expansão da internet e das tecnologias digitais."
+        }
+    ];
+
+    let currentQuizQ = 0;
+
+    function startQuizTimer() {
+        quizTimerVal = 60;
+        document.getElementById('quizTimerDisplay').innerText = `⏱️ ${quizTimerVal}s`;
+        quizTimerInterval = setInterval(() => {
+            quizTimerVal--;
+            document.getElementById('quizTimerDisplay').innerText = `⏱️ ${quizTimerVal}s`;
+            if (quizTimerVal <= 0) {
+                triggerExplosion();
+            }
+        }, 1000);
+    }
+
+    function loadQuizQuestion(index) {
+        currentQuizQ = index;
+        const q = questions[index];
+        document.getElementById('quizCounter').innerText = `Pergunta ${index + 1} de 7`;
+        document.getElementById('quizQuestion').innerText = q.q;
+        document.getElementById('quizProgress').style.width = `${((index) / questions.length) * 100}%`;
+
+        const optsDiv = document.getElementById('quizOptions');
+        optsDiv.innerHTML = '';
+
+        const feedbackBox = document.getElementById('quizFeedback');
+        feedbackBox.classList.add('hidden');
+
+        q.options.forEach((optText, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = optText;
+            btn.onclick = () => checkQuizAnswer(idx);
+            optsDiv.appendChild(btn);
+        });
+    }
+
+    function checkQuizAnswer(selectedIdx) {
+        const q = questions[currentQuizQ];
+        const buttons = document.querySelectorAll('.option-btn');
+        const feedbackBox = document.getElementById('quizFeedback');
+        const feedbackTitle = document.getElementById('quizFeedbackTitle');
+        const feedbackText = document.getElementById('quizFeedbackText');
+
+        buttons.forEach(btn => btn.disabled = true);
+
+        if (selectedIdx === q.correct) {
+            buttons[selectedIdx].classList.add('correct');
+            quizScore += 150;
+            addPoints(150);
+            Sound.win();
+
+            feedbackBox.className = "feedback-box correct-bg";
+            feedbackTitle.innerText = "✨ RESPOSTA CORRETA! (+150 PONTOS)";
+            feedbackText.innerText = q.explain;
+        } else {
+            buttons[selectedIdx].classList.add('wrong');
+            buttons[q.correct].classList.add('correct');
+            Sound.fail();
+
+            feedbackBox.className = "feedback-box wrong-bg";
+            feedbackTitle.innerText = "❌ RESPOSTA INCORRETA!";
+            feedbackText.innerHTML = `Sua escolha estava incorreta.<br><b>A opção certa era:</b> ${q.options[q.correct]}<br><span class="mt-2 block text-lg font-extrabold text-gray-900">${q.explain}</span>`;
+        }
+
+        feedbackBox.classList.remove('hidden');
+    }
+
+    function nextQuizQuestion() {
+        currentQuizQ++;
+        if (currentQuizQ < questions.length) {
+            loadQuizQuestion(currentQuizQ);
+        } else {
+            clearInterval(quizTimerInterval);
+            startStage2();
+        }
+    }
+
+    let stampedCount = 0;
+    const systemCards = [
+        { id: 1, name: "🏦 Sistema Bancário", year: "1999" },
+        { id: 2, name: "🏥 Rede Hospitalar", year: "1999" },
+        { id: 3, name: "⚡ Usina Elétrica", year: "1999" },
+        { id: 4, name: "📡 Telecomunicações", year: "1999" },
+        { id: 5, name: "✈️ Controle Aéreo", year: "1999" }
+    ];
+
+    function startStage2() {
+        showScreen('screenStamp');
+        stampedCount = 0;
+        stampTimerVal = 20;
+
+        // Garante que todos os servidores voltem para 1999 no início da fase
+        systemCards.forEach(card => card.year = "1999");
+
+        document.getElementById('stampTimerDisplay').innerText = `⏱️ ${stampTimerVal}s`;
+        document.getElementById('stampSuccessBox').classList.add('hidden');
+
+        renderStampGrid();
+
+        stampTimerInterval = setInterval(() => {
+            stampTimerVal--;
+            document.getElementById('stampTimerDisplay').innerText = `⏱️ ${stampTimerVal}s`;
+            if (stampTimerVal <= 0) {
+                triggerExplosion();
+            }
+        }, 1000);
+    }
+
+    function renderStampGrid() {
+        const grid = document.getElementById('stampGrid');
+        grid.innerHTML = '';
+
+        systemCards.forEach(card => {
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'stamp-card';
+
+            const isUpdated = card.year === "2000";
+
+            cardDiv.innerHTML = `
+                    <div class="text-2xl font-black text-gray-900">${card.name}</div>
+                    <div class="text-3xl font-black ${isUpdated ? 'text-green-600' : 'text-red-600'}">
+                        ANO: ${card.year}
+                    </div>
+                    <button onclick="stampSystem(${card.id})" ${isUpdated ? 'disabled' : ''}
+                        class="btn-action text-xl py-3 px-6 ${isUpdated ? 'bg-green-400 opacity-60 cursor-default' : 'bg-yellow-400'}">
+                        ${isUpdated ? '✅ ATUALIZADO' : '📑 CARIMBAR 2000'}
+                    </button>
+                `;
+            grid.appendChild(cardDiv);
+        });
+    }
+
+    function stampSystem(id) {
+        const item = systemCards.find(c => c.id === id);
+        if (item && item.year === "1999") {
+            item.year = "2000";
+            stampedCount++;
+            stampScore += 70;
+            addPoints(70);
+            Sound.win();
+            renderStampGrid();
+
+            if (stampedCount >= systemCards.length) {
+                clearInterval(stampTimerInterval);
+                document.getElementById('stampSuccessBox').classList.remove('hidden');
+            }
+        }
+    }
+
+    function goToStage3() {
+        showScreen('screenCatch');
+        initCanvas();
+    }
+
+    let canvas, ctx;
+    let paddle = { x: 0, width: 140, height: 22 };
+    let bugs = [];
+    let spawnCounter = 0;
+
+    function initCanvas() {
+        canvas = document.getElementById('gameCanvas');
+        ctx = canvas.getContext('2d');
+
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = 340;
+
+        paddle.x = (canvas.width - paddle.width) / 2;
+
+        canvas.onmousemove = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            paddle.x = e.clientX - rect.left - paddle.width / 2;
+        };
+
+        canvas.ontouchmove = (e) => {
+            if (e.touches.length > 0) {
+                const rect = canvas.getBoundingClientRect();
+                paddle.x = e.touches[0].clientX - rect.left - paddle.width / 2;
+            }
+        };
+
+        window.onkeydown = (e) => {
+            if (e.key === 'ArrowLeft') paddle.x -= 30;
+            if (e.key === 'ArrowRight') paddle.x += 30;
+        };
+
+        document.getElementById('catchStartOverlay').classList.remove('hidden');
+    }
+
+    function startCatchGame() {
+        document.getElementById('catchStartOverlay').classList.add('hidden');
+        catchTimerVal = 20;
+        catchScoreVal = 0;
+        bugs = [];
+        catchGameRunning = true;
+
+        document.getElementById('catchTimer').innerText = `${catchTimerVal}s`;
+        document.getElementById('catchScore').innerText = '0';
+
+        catchTimerInterval = setInterval(() => {
+            catchTimerVal--;
+            document.getElementById('catchTimer').innerText = `${catchTimerVal}s`;
+            if (catchTimerVal <= 0) {
+                endCatchGame();
+            }
+        }, 1000);
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    function spawnBugItem() {
+        const x = Math.random() * (canvas.width - 40) + 20;
+        bugs.push({
+            x: x,
+            y: -30,
+            speed: 3 + Math.random() * 3,
+            radius: 20,
+            text: "99"
+        });
+    }
+
+    function gameLoop() {
+        if (!catchGameRunning) return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (paddle.x < 0) paddle.x = 0;
+        if (paddle.x + paddle.width > canvas.width) paddle.x = canvas.width - paddle.width;
+
+        ctx.fillStyle = '#2a9d8f';
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.roundRect(paddle.x, canvas.height - 30, paddle.width, paddle.height, 12);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 14px Nunito';
+        ctx.textAlign = 'center';
+        ctx.fillText('🛡️ ESCUDO Y2K', paddle.x + paddle.width / 2, canvas.height - 14);
+
+        spawnCounter++;
+        if (spawnCounter % 30 === 0) {
+            spawnBugItem();
+        }
+
+        for (let i = bugs.length - 1; i >= 0; i--) {
+            let b = bugs[i];
+            b.y += b.speed;
+
+            ctx.fillStyle = '#e63946';
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 16px Nunito';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(b.text, b.x, b.y);
+
+            if (b.y + b.radius >= canvas.height - 30 &&
+                b.x >= paddle.x && b.x <= paddle.x + paddle.width) {
+
+                bugs.splice(i, 1);
+                catchScoreVal++;
+                addPoints(60);
+                Sound.win();
+                document.getElementById('catchScore').innerText = catchScoreVal;
+                continue;
+            }
+
+            if (b.y - b.radius > canvas.height) {
+                bugs.splice(i, 1);
+            }
+        }
+
+        catchAnimFrame = requestAnimationFrame(gameLoop);
+    }
+
+    function endCatchGame() {
+        clearAllIntervals();
+        finishGame();
+    }
+
+    function finishGame() {
+        document.getElementById('finalQuizScore').innerText = `${quizScore} pts`;
+        document.getElementById('finalStampScore').innerText = `${stampScore} pts`;
+        document.getElementById('finalCatchScore').innerText = `${catchScoreVal * 60} pts`;
+        document.getElementById('finalTotalScore').innerText = `${totalScore} / 2000`;
+
+        const title = document.getElementById('endVictoryTitle');
+        const msg = document.getElementById('finalResultMessage');
+
+        if (totalScore >= 1500) {
+            title.innerText = "VOCÊ SALVOU O MUNDO DO BUG DO MILÊNIO!";
+            title.className = "text-4xl md:text-5xl font-black text-green-700 mb-3 font-['Fredoka']";
+            msg.className = "bg-green-200 border-3 border-green-800 p-5 rounded-xl text-green-950 font-extrabold text-lg leading-relaxed";
+            msg.innerText = "🎉 PARABÉNS! Você superou a meta de 1500 pontos. Todos os computadores, caixas eletrônicos, voos e usinas continuaram operando perfeitamente no ano 2000!";
+            Sound.win();
+        } else {
+            title.innerText = "❌ SUA PONTUAÇÃO FICOU ABAIXO DA META!";
+            title.className = "text-4xl md:text-5xl font-black text-red-600 mb-3 font-['Fredoka']";
+            msg.className = "bg-red-200 border-3 border-red-800 p-5 rounded-xl text-red-950 font-extrabold text-lg leading-relaxed";
+            msg.innerText = `⚠️ Você somou ${totalScore} pontos, ficando abaixo dos 1500 pontos necessários. Pequenas falhas ocorreram em alguns sistemas! Tente jogar novamente para obter a pontuação máxima!`;
+            Sound.fail();
+        }
+
+        showScreen('screenEnd');
+    }
+</script>
+</body>
+</html>
