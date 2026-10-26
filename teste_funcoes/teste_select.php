@@ -2,6 +2,7 @@
 include "../funcoes/funcao_select.php";
 
 $consulta = select('questoes', "referencia");
+$dadosBD = select('questoes');
 $materia = [];
 $contador = 0;
 $semRepetir = array();
@@ -17,21 +18,35 @@ foreach (['SORT_REGULAR'] as $flag) {
     var_dump($new_consulta_limpo);
 }
 
-foreach ($a_new as $referencia) {
-    $new_consulta = select('questoes', 'referencia');
-    var_dump($new_consulta);
+var_dump($consulta);
 
-}
+foreach ($new_consulta_limpo as $key => $value) {
+    print_r($value);
 
-for ($i = 1; $i < count($new_consulta_limpo); $i++){
-    $materia[] = $i;
-    print_r($materia);
-    echo "<br>";
-    for ($j = 0; $j <= $numberOfQuestions; $j++){
+    for ($i = 0; $i < $numberOfQuestions; $i++) {
+        ?>
 
+        <div class="container-fluid mb-3" style="max-width: 1000px">
+            <div class="row">
+                <div class="col-10">
+                    <div class="numQuestao">
+                        <?php echo "Questão: " . ($i + 1) ?>
+                    </div>
+                    <div class="titulo-questao">
+                        <?php echo $dadosBD[$i]['titulo']  ?>
+                    </div>
+                    <div class="subtitulo">
+                        <?php echo $dadosBD[$i]['subtitulo'] ?>
+                    </div>
+                    <div class="questao">
+                        <?php echo $dadosBD[$i]['questao']?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
 
-        $j++;
     }
-    $i++;
-
 }
+
+?>
